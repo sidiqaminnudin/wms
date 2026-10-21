@@ -1,0 +1,21 @@
+<div class="page-title"><h1>Administrasi / Pengaturan</h1><p>Pengguna, gudang, peran, hak akses, dan identitas perusahaan.</p></div>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="tabs"><a class="active" aria-disabled="true" title="Tidak tersedia dalam preview">Perusahaan</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Pengguna</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Peran &amp; Hak Akses</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Gudang</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Notifikasi</a></div>
+    <div class="section-head"><div><h3>Data Perusahaan</h3><p>Informasi utama WMS SJLM &amp; GEKA.</p></div><button class="btn btn-primary" type="button" disabled title="Tidak tersedia dalam preview">Ubah</button></div>
+    <div class="grid grid-2">
+      <div>
+        <div class="logo" style="color:var(--text)"><div class="logo-mark"></div><div><div>WMS<br>SJLM &amp; GEKA</div><small style="color:var(--muted)">Satu sistem, semua lebih mudah</small></div></div>
+        <div class="stat-line"><span>Nama Perusahaan</span><strong>SJLM &amp; GEKA</strong></div>
+        <div class="stat-line"><span>NPWP</span><strong>01.234.567.8-901.000</strong></div>
+        <div class="stat-line"><span>Alamat</span><strong>Jl. Logistik Raya No. 12, Jakarta Timur</strong></div>
+        <div class="stat-line"><span>Telepon</span><strong>021-1234-5678</strong></div>
+        <div class="stat-line"><span>Email</span><strong>info@sjlm-geka.com</strong></div>
+      </div>
+      <div style="background:linear-gradient(135deg,#fde7d3,#fff7ed);border-radius:20px;min-height:260px;display:grid;place-items:center;color:#9a3412;font-weight:700">Preview Gedung / Logo</div>
+    </div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Daftar Pengguna</h3><p>Contoh tabel user management.</p></div><button class="btn btn-primary" type="button" disabled title="Tidak tersedia dalam preview">Tambah</button></div>
+    <div class="table-wrap"><%- include('../partials/_data-table', {"headers":["Nama","Email","Peran","Status"],"rows":[["Andi Pratama","andi@sjlm-geka.com","Admin","\u003cspan class=\"status success\">Aktif\u003c/span>"],["Siti Nurhaliza","siti@sjlm-geka.com","Purchasing","\u003cspan class=\"status success\">Aktif\u003c/span>"],["Budi Santoso","budi@sjlm-geka.com","Teknisi","\u003cspan class=\"status warning\">Cuti\u003c/span>"],["Rina Lestari","rina@sjlm-geka.com","Gudang","\u003cspan class=\"status success\">Aktif\u003c/span>"]]}) %></div>
+    <div class="notice" style="margin-top:16px">Peran contoh: Admin, Purchasing, Warehouse, Teknisi. Notifikasi dapat diaktifkan per modul.</div>
+  </div>
+</section>

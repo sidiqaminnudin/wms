@@ -53,13 +53,28 @@ test('all mapped preview routes render and static assets are available', async (
     const response = await request(`/${route}`);
     assert.equal(response.status, 200, route);
     assert.match(response.body, /UI preview/, route);
+    assert.match(response.body, new RegExp(`href=\"/${route}\"`), route);
   }
   const css = await request('/public/css/app.css');
   assert.equal(css.status, 200);
   assert.match(css.body, /preview-banner/);
+  assert.match(css.body, /Compact mobile tables/);
   const missing = await request('/not-found');
   assert.equal(missing.status, 404);
   assert.match(missing.body, /Halaman tidak ditemukan/);
+});
+
+test('module views use reusable components and disable preview-only controls', async () => {
+  const dashboard = await request('/dashboard');
+  assert.match(dashboard.body, /class="kpi"/);
+  const master = await request('/master-barang');
+  assert.match(master.body, /data-label="Nama Barang"/);
+  assert.match(master.body, /disabled/);
+  assert.match(master.body, /Tidak tersedia dalam preview/);
+  const references = await request('/references');
+  assert.match(references.body, /Komponen UI preview/);
+  assert.match(references.body, /componentModal/);
+  assert.match(references.body, /data-preview-toast/);
 });
 
 test('production mode protects preview module routes', async () => {

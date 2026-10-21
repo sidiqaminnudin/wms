@@ -1,0 +1,29 @@
+<div class="page-title"><h1>Laporan &amp; Analisis</h1><p>Pantau pergerakan stok, analisis stok minimum, dan penggunaan teknisi.</p></div>
+<section class="grid grid-4" style="margin-top:18px">
+  <%- include('../partials/_kpi-card', {"label":"Total Pergerakan Stok","value":"2.450","description":"+12% dari bulan lalu","variant":"blue","icon":"▲"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Total Item","value":"1.245","description":"+8% dari bulan lalu","variant":"green","icon":"□"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Item Stok Minimum","value":"48","description":"+7% dari bulan lalu","variant":"orange","icon":"!"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Aktivitas Pengguna","value":"86","description":"+15% dari bulan lalu","variant":"red","icon":"☺"}) %>
+</section>
+<section class="grid grid-3" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Pergerakan Stok Barang</h3><p>Masuk vs keluar</p></div></div><div class="bars">
+    <div class="bar"><span>1 Jan</span><div class="progress" data-progress="30"><span></span></div><strong>30</strong></div>
+    <div class="bar"><span>8 Jan</span><div class="progress" data-progress="52"><span></span></div><strong>52</strong></div>
+    <div class="bar"><span>15 Jan</span><div class="progress" data-progress="67"><span></span></div><strong>67</strong></div>
+    <div class="bar"><span>22 Jan</span><div class="progress" data-progress="73"><span></span></div><strong>73</strong></div>
+  </div></div>
+  <div class="card"><div class="section-head"><div><h3>Analisis Stok Minimum</h3><p>Prioritas restock</p></div></div><div class="donut" data-label="48
+Item"></div>
+    <div class="stat-line"><span>Kritis</span><strong>12</strong></div>
+    <div class="stat-line"><span>Rendah</span><strong>24</strong></div>
+    <div class="stat-line"><span>Aman</span><strong>12</strong></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Penggunaan Teknisi</h3><p>Aktivitas mingguan</p></div></div><div class="bars">
+    <div class="bar"><span>Minggu 1</span><div class="progress" data-progress="35"><span></span></div><strong>35</strong></div>
+    <div class="bar"><span>Minggu 2</span><div class="progress" data-progress="48"><span></span></div><strong>48</strong></div>
+    <div class="bar"><span>Minggu 3</span><div class="progress" data-progress="59"><span></span></div><strong>59</strong></div>
+    <div class="bar"><span>Minggu 4</span><div class="progress" data-progress="72"><span></span></div><strong>72</strong></div>
+  </div></div>
+</section>
+<section class="card" style="margin-top:18px"><div class="section-head"><div><h3>Laporan Pergerakan Stok Barang</h3><p>Contoh tabel laporan.</p></div><div style="display:flex;gap:8px"><button class="btn btn-secondary" type="button" disabled title="Tidak tersedia dalam preview">Export Excel</button><button class="btn btn-primary" type="button" disabled title="Tidak tersedia dalam preview">Export PDF</button></div></div>
+<div class="table-wrap"><%- include('../partials/_data-table', {"headers":["Tanggal","Kode Barang","Nama Barang","Jenis","Gudang","Masuk","Keluar","Keterangan"],"rows":[["20 Jan 2026","BRG-001","Pipa PVC 2 inch","Material","Gudang 1","50","0","Penerimaan PO"],["20 Jan 2026","BRG-003","Lem PVC 400 gr","Material","Gudang 1","0","30","Pengeluaran Proyek"],["19 Jan 2026","BRG-005","Kabel NYM 3x2,5","Elektrikal","Gudang 2","100","0","Penerimaan PO"]]}) %></div></section>

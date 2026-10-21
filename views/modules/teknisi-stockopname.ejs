@@ -1,0 +1,43 @@
+<div class="page-title"><h1>Teknisi &amp; Stock Opname</h1><p>Pengelolaan distribusi material ke teknisi dan proses stock opname yang akurat.</p></div>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Dashboard Teknisi</h3><p>Distribusi status barang per teknisi.</p></div></div>
+    <div class="grid grid-4">
+      <%- include('../partials/_kpi-card', {"label":"Total Barang Dibawa","value":"1.245","description":"+12% dari bulan lalu","variant":"green","icon":"↑"}) %>
+      <%- include('../partials/_kpi-card', {"label":"Terpasang","value":"420","description":"8% dari total","variant":"blue","icon":"◎"}) %>
+      <%- include('../partials/_kpi-card', {"label":"Dikembalikan","value":"132","description":"6% dari total","variant":"orange","icon":"↩"}) %>
+      <%- include('../partials/_kpi-card', {"label":"Rusak","value":"51","description":"4% dari total","variant":"red","icon":"✕"}) %>
+    </div>
+    <div class="bars" style="margin-top:16px">
+      <div class="bar"><span>Budi Santoso</span><div class="progress" data-progress="78"><span></span></div><strong>193</strong></div>
+      <div class="bar"><span>Ahmad Fauzi</span><div class="progress" data-progress="65"><span></span></div><strong>161</strong></div>
+      <div class="bar"><span>Rizky Hadi</span><div class="progress" data-progress="58"><span></span></div><strong>133</strong></div>
+      <div class="bar"><span>Dewi Lestari</span><div class="progress" data-progress="42"><span></span></div><strong>94</strong></div>
+    </div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Issue Barang ke Teknisi</h3><p>Pilih work order dan barang yang akan diserahkan.</p></div></div>
+    <div class="form-grid">
+      <%- include('../partials/_form-field', {"id":"teknisi-stockopname-field-1","label":"Work Order","control":"\u003cselect id=\"teknisi-stockopname-field-1\" disabled>\u003coption>WO-2025-0012\u003c/option>\u003c/select>"}) %>
+      <%- include('../partials/_form-field', {"id":"teknisi-stockopname-field-2","label":"Pilih Teknisi","control":"\u003cselect id=\"teknisi-stockopname-field-2\" disabled>\u003coption>Budi Santoso (TKN-001)\u003c/option>\u003c/select>"}) %>
+    </div>
+    <div class="table-wrap" style="margin-top:16px"><%- include('../partials/_data-table', {"headers":["Kode Barang","Nama Barang","Qty Diminta","Qty Issue","Satuan"],"rows":[["ITM-AC-001","Access Point Ubiquiti","10","10","Pcs"],["ITM-CB-004","Kabel UTP Cat6","100","100","Mtr"],["ITM-CN-002","Connector RJ45","20","20","Pcs"]]}) %></div>
+    <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px"><button class="btn btn-secondary" type="button" disabled title="Tidak tersedia dalam preview">Batal</button><button class="btn btn-primary" type="button" disabled title="Tidak tersedia dalam preview">Lanjut ke Konfirmasi</button></div>
+  </div>
+</section>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Dashboard Stock Opname</h3><p>Pantau progres dan hasil stock opname per gudang.</p></div></div>
+    <div class="grid grid-4">
+      <div class="kpi"><div><div style="color:var(--muted)">Total Jadwal</div><h3>12</h3></div><div class="icon orange">📅</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Sedang Berjalan</div><h3>3</h3></div><div class="icon info">▶</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Selesai</div><h3>8</h3></div><div class="icon green">✔</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Tertunda</div><h3>1</h3></div><div class="icon red">⏰</div></div>
+    </div>
+    <div class="bars" style="margin-top:16px">
+      <div class="bar"><span>Gudang 1 - Jakarta</span><div class="progress" data-progress="80"><span></span></div><strong>80%</strong></div>
+      <div class="bar"><span>Gudang 2 - Surabaya</span><div class="progress" data-progress="60"><span></span></div><strong>60%</strong></div>
+      <div class="bar"><span>Gudang 3 - Bandung</span><div class="progress" data-progress="100"><span></span></div><strong>100%</strong></div>
+    </div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Input Perhitungan Opname</h3><p>Masukkan jumlah aktual dan lihat selisih real-time.</p></div><span class="badge success">Sedang Berjalan</span></div>
+    <div class="table-wrap"><%- include('../partials/_data-table', {"headers":["Kode Barang","Nama Barang","Qty Sistem","Qty Aktual","Selisih","Status"],"rows":[["ITM-AC-001","Access Point Ubiquiti","50","48","-2","\u003cspan class=\"status danger\">Kurang\u003c/span>"],["ITM-CB-004","Kabel UTP Cat6","100","100","0","\u003cspan class=\"status success\">Sesuai\u003c/span>"],["ITM-CN-002","Connector RJ45","300","320","+20","\u003cspan class=\"status info\">Lebih\u003c/span>"]]}) %></div>
+  </div>
+</section>

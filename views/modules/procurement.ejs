@@ -1,0 +1,15 @@
+<div class="page-title"><h1>Pengadaan (Purchase Order)</h1><p>Kelola proses pengadaan barang dan jasa dari permintaan hingga penerimaan.</p></div>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Daftar Purchase Order</h3><p>Contoh tabel utama modul pengadaan.</p></div><a class="btn btn-primary" aria-disabled="true" title="Tidak tersedia dalam preview">Buat PO</a></div>
+    <div class="table-wrap"><%- include('../partials/_data-table', {"headers":["No. PO","Tanggal","Supplier","Jumlah Item","Jumlah Unit","Status","Progress"],"rows":[["PO-2026-001","06 Jan 2026","PT Maju Sejahtera","12","250","\u003cspan class=\"status success\">Selesai\u003c/span>","100%"],["PO-2026-002","08 Jan 2026","PT Surya Teknik","8","120","\u003cspan class=\"status warning\">Dalam Proses\u003c/span>","60%"],["PO-2026-003","12 Jan 2026","CV Sinar Abadi","15","300","\u003cspan class=\"status primary\">Menunggu\u003c/span>","0%"]]}) %></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Detail Purchase Order</h3><p>Step operasional dan daftar barang.</p></div><span class="badge warning">Dalam Proses</span></div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Permintaan</strong><div style="color:var(--muted)">06 Jan 2026</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>PO Dibuat</strong><div style="color:var(--muted)">08 Jan 2026</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Persetujuan</strong><div style="color:var(--muted)">09 Jan 2026</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Pengiriman</strong><div style="color:var(--muted)">Dalam Proses</div></div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px"><%- include('../partials/_data-table', {"headers":["Kode","Nama Barang","Spesifikasi","Satuan","Jumlah Unit","Status"],"rows":[["BRG-001","Pipa PVC 2 inch","SNI 10m/pcs","pcs","50","\u003cspan class=\"status success\">Diterima Sebagian\u003c/span>"],["BRG-002","Valve 1/2 inch","Kuningan","pcs","20","\u003cspan class=\"status info\">Dalam Pengiriman\u003c/span>"],["BRG-003","Lem PVC","400 gr","pcs","30","\u003cspan class=\"status warning\">Menunggu\u003c/span>"]]}) %></div>
+  </div>
+</section>

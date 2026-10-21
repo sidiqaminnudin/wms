@@ -1,0 +1,39 @@
+<div class="section-head"><div><h1 style="margin:0">Master Barang</h1><p>Kelola data barang, kategori, spesifikasi, dan inventaris perusahaan.</p></div><a class="btn btn-primary" aria-disabled="true" title="Tidak tersedia dalam preview">Tambah Barang</a></div>
+<section class="card"><div class="grid grid-4">
+  <%- include('../partials/_form-field', {"id":"master-barang-field-1","label":"Perusahaan","control":"\u003cselect id=\"master-barang-field-1\" disabled>\u003coption>SJLM\u003c/option>\u003coption>GEKA\u003c/option>\u003c/select>"}) %>
+  <%- include('../partials/_form-field', {"id":"master-barang-field-2","label":"Gudang","control":"\u003cselect id=\"master-barang-field-2\" disabled>\u003coption>Semua Gudang\u003c/option>\u003c/select>"}) %>
+  <%- include('../partials/_form-field', {"id":"master-barang-field-3","label":"Kategori","control":"\u003cselect id=\"master-barang-field-3\" disabled>\u003coption>Semua Kategori\u003c/option>\u003c/select>"}) %>
+  <%- include('../partials/_form-field', {"id":"master-barang-field-4","label":"Pencarian","control":"\u003cinput id=\"master-barang-field-4\" disabled placeholder=\"Cari nama barang, SKU, atau kode...\">"}) %>
+</div>
+<div class="tabs" style="margin-top:16px"><a class="active" aria-disabled="true" title="Tidak tersedia dalam preview">Semua 1.248</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Aktif 1.132</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Stok Rendah 64</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Tidak Aktif 52</a></div>
+<div class="table-wrap"><%- include('../partials/_data-table', {"headers":["Foto","Nama Barang","SKU/Kode","Kategori","Satuan","Stok Total","Status"],"rows":[["📦","\u003cstrong>Pallet Plastik 1100x1100\u003c/strong>\u003cdiv style=\"color:var(--muted)\">BRG-001\u003c/div>","PLT-1100-BL","Pallet","Pcs","1.240","\u003cspan class=\"status success\">Tersedia\u003c/span>"],["🔋","\u003cstrong>Forklift Battery 2.5T\u003c/strong>\u003cdiv style=\"color:var(--muted)\">BRG-002\u003c/div>","FLK-25T-BT","Alat Berat","Unit","3","\u003cspan class=\"status warning\">Stok Rendah\u003c/span>"],["⛑️","\u003cstrong>Safety Helmet\u003c/strong>\u003cdiv style=\"color:var(--muted)\">BRG-003\u003c/div>","HLM-SFT-YL","APD","Pcs","526","\u003cspan class=\"status success\">Tersedia\u003c/span>"],["📟","\u003cstrong>Barcode Scanner\u003c/strong>\u003cdiv style=\"color:var(--muted)\">BRG-004\u003c/div>","BCR-DS930","Elektronik","Unit","28","\u003cspan class=\"status success\">Tersedia\u003c/span>"],["🛒","\u003cstrong>Hand Pallet 3 Ton\u003c/strong>\u003cdiv style=\"color:var(--muted)\">BRG-006\u003c/div>","HPT-3T","Material Handling","Unit","12","\u003cspan class=\"status warning\">Stok Rendah\u003c/span>"]]}) %></div>
+</section>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Detail Barang</h3><p>Contoh tampilan detail dan stok per lokasi gudang.</p></div><span class="badge success">Aktif</span></div>
+    <div class="grid grid-2">
+      <div><div style="background:#e9f2ff;border-radius:18px;height:220px;display:grid;place-items:center;font-size:74px">🟦</div></div>
+      <div>
+        <h3 style="margin-top:0">Pallet Plastik 1100x1100</h3>
+        <div class="stat-line"><span>SKU / Kode</span><strong>PLT-1100-BL</strong></div>
+        <div class="stat-line"><span>Kategori</span><strong>Pallet</strong></div>
+        <div class="stat-line"><span>Satuan</span><strong>Pcs</strong></div>
+        <div class="stat-line"><span>Berat</span><strong>12.5 kg</strong></div>
+        <div class="stat-line"><span>Dimensi</span><strong>110 x 110 x 15 cm</strong></div>
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-top:18px"><%- include('../partials/_data-table', {"headers":["Lokasi / Gudang","Stok","Status"],"rows":[["Gudang 1 - SJLM","850 Pcs","\u003cspan class=\"status success\">Tersedia\u003c/span>"],["Gudang 2 - SJLM","240 Pcs","\u003cspan class=\"status success\">Tersedia\u003c/span>"],["Gudang 3 - GEKA","100 Pcs","\u003cspan class=\"status success\">Tersedia\u003c/span>"],["Gudang 4 - GEKA","50 Pcs","\u003cspan class=\"status success\">Tersedia\u003c/span>"]]}) %></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Form Tambah Barang</h3><p>Slicing modal/form untuk create item baru.</p></div></div>
+    <div class="form-grid">
+      <%- include('../partials/_form-field', {"id":"master-barang-field-5","label":"Nama Barang","control":"\u003cinput id=\"master-barang-field-5\" disabled placeholder=\"Masukkan nama barang\">"}) %>
+      <%- include('../partials/_form-field', {"id":"master-barang-field-6","label":"SKU / Kode Barang","control":"\u003cinput id=\"master-barang-field-6\" disabled placeholder=\"Contoh: BRG-001\">"}) %>
+      <%- include('../partials/_form-field', {"id":"master-barang-field-7","label":"Kategori","control":"\u003cselect id=\"master-barang-field-7\" disabled>\u003coption>Pilih kategori\u003c/option>\u003c/select>"}) %>
+      <%- include('../partials/_form-field', {"id":"master-barang-field-8","label":"Satuan","control":"\u003cselect id=\"master-barang-field-8\" disabled>\u003coption>Pilih satuan\u003c/option>\u003c/select>"}) %>
+      <%- include('../partials/_form-field', {"id":"master-barang-field-9","label":"Merek","control":"\u003cinput id=\"master-barang-field-9\" disabled placeholder=\"Contoh: Toyota\">"}) %>
+      <%- include('../partials/_form-field', {"id":"master-barang-field-10","label":"Berat (kg)","control":"\u003cinput id=\"master-barang-field-10\" disabled value=\"0.0\">"}) %>
+    </div>
+    <div class="input-group" style="margin-top:14px"><label>Deskripsi Barang</label><textarea placeholder="Masukkan deskripsi barang..."></textarea></div>
+    <div class="notice" style="margin-top:14px">Informasi harga disembunyikan secara default dan hanya opsional untuk modul tertentu.</div>
+    <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px"><button class="btn btn-secondary" type="button" disabled title="Tidak tersedia dalam preview">Batal</button><button class="btn btn-primary" type="button" disabled title="Tidak tersedia dalam preview">Simpan Barang</button></div>
+  </div>
+</section>

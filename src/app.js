@@ -2,7 +2,6 @@ import express from 'express';
 import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { readFileSync } from 'node:fs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 export const navigation = [
@@ -39,14 +38,7 @@ export function createApp({ preview = process.env.UI_PREVIEW === 'true' && proce
   for (const [slug, title] of navigation) {
     app.get([`/${slug}`, ...(slug === 'admin-settings' ? ['/admin/settings'] : [])], (req, res) => {
       if (!preview) return res.redirect('/login');
-      const html = readFileSync(path.join(root, 'pages', `${slug}.html`), 'utf8');
-      // Only trusted, repository-owned slicing markup is rendered unescaped.
-      const contentStart = Math.min(...['<div class="page-title">', '<div class="section-head">']
-        .map(marker => html.indexOf(marker)).filter(index => index >= 0));
-      const main = html.slice(contentStart, html.indexOf('<div class="footer-note">'))
-        .replaceAll('../assets/', '/assets/').replace(/href="([a-z-]+)\.html"/g, 'href="/$1"');
-
-      res.render('pages/preview', { title, slug, navigation, content: main, preview });
+      res.render('pages/preview', { title, slug, navigation, preview, moduleView: `modules/${slug}` });
     });
   }
   app.use((req, res) => res.status(404).render('pages/message', { title: 'Halaman tidak ditemukan', message: 'Periksa alamat halaman atau kembali ke beranda.' }));

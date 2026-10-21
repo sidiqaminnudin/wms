@@ -1,0 +1,38 @@
+<div class="page-title"><h1>Dashboard</h1><p>Ringkasan aktivitas gudang SJLM &amp; GEKA secara real-time.</p></div>
+<section class="grid grid-4" style="margin-top:18px">
+  <%- include('../partials/_kpi-card', {"label":"Total SKU","value":"12.580","description":"Item terdaftar","variant":"green","icon":"#"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Stok Tersedia","value":"8.420","description":"Item tersedia","variant":"blue","icon":"■"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Stok Minimum","value":"1.250","description":"Perlu perhatian","variant":"orange","icon":"!"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Permintaan Pending","value":"24","description":"Menunggu proses","variant":"red","icon":"?"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Barang Transit","value":"18","description":"Dalam pengiriman","variant":"purple","icon":"⇄"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Barang Diproses","value":"36","description":"Sedang ditangani","variant":"orange","icon":"↺"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Penugasan Teknisi","value":"12","description":"Sedang berjalan","variant":"teal","icon":"👥"}) %>
+  <%- include('../partials/_kpi-card', {"label":"Aktivitas Gudang","value":"156","description":"Hari ini","variant":"blue","icon":"▦"}) %>
+</section>
+<section class="grid grid-3" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Pergerakan Stok Barang</h3><p>Grafik masuk dan keluar barang</p></div><span class="badge primary">Jan 2026</span></div>
+    <div class="bars">
+      <div class="bar"><span>1 Jan</span><div class="progress" data-progress="35"><span></span></div><strong>35</strong></div>
+      <div class="bar"><span>8 Jan</span><div class="progress" data-progress="58"><span></span></div><strong>58</strong></div>
+      <div class="bar"><span>15 Jan</span><div class="progress" data-progress="72"><span></span></div><strong>72</strong></div>
+      <div class="bar"><span>22 Jan</span><div class="progress" data-progress="64"><span></span></div><strong>64</strong></div>
+      <div class="bar"><span>31 Jan</span><div class="progress" data-progress="80"><span></span></div><strong>80</strong></div>
+    </div></div>
+  <div class="card"><div class="section-head"><div><h3>Komposisi Stok per Gudang</h3><p>Distribusi total SKU</p></div></div><div class="donut" data-label="12.580
+Total SKU"></div>
+    <div class="stat-line"><span>Gudang 1</span><span>42%</span></div>
+    <div class="stat-line"><span>Gudang 2</span><span>28%</span></div>
+    <div class="stat-line"><span>Gudang 3</span><span>18%</span></div>
+    <div class="stat-line"><span>Gudang 4</span><span>12%</span></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Status Permintaan</h3><p>Kondisi dokumen berjalan</p></div></div>
+    <div class="list">
+      <div class="stat-line"><span>Selesai</span><span class="badge success">50%</span></div>
+      <div class="stat-line"><span>Diproses</span><span class="badge info">25%</span></div>
+      <div class="stat-line"><span>Menunggu</span><span class="badge warning">17%</span></div>
+      <div class="stat-line"><span>Dibatalkan</span><span class="badge danger">8%</span></div>
+    </div>
+  </div>
+</section>
+<section class="card" style="margin-top:18px"><div class="section-head"><div><h3>Permintaan Terbaru</h3><p>Aktivitas terbaru dari modul permintaan dan operasional gudang.</p></div><a class="btn btn-secondary" href="/permintaan">Lihat semua</a></div>
+<div class="table-wrap"><%- include('../partials/_data-table', {"headers":["No. Permintaan","Tanggal","Jenis","Gudang Asal","Gudang Tujuan","Jumlah Item","Status","Dibuat Oleh"],"rows":[["PR-202601-001","28 Jan 2026","Permintaan","Gudang 1","Gudang 2","12","\u003cspan class=\"status warning\">Menunggu\u003c/span>","Andi Pratama"],["PR-202601-002","27 Jan 2026","Pengeluaran","Gudang 2","-","8","\u003cspan class=\"status info\">Diproses\u003c/span>","Budi Santoso"],["PR-202601-003","26 Jan 2026","Permintaan","Gudang 3","Gudang 1","6","\u003cspan class=\"status success\">Selesai\u003c/span>","Siti Rahma"],["PR-202601-004","25 Jan 2026","Penerimaan","-","Gudang 2","15","\u003cspan class=\"status primary\">Dalam Pengiriman\u003c/span>","Dedi Kurniawan"]]}) %></div></section>

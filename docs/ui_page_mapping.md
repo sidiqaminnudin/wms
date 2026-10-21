@@ -6,8 +6,8 @@
 |---|---|---|---|---|
 | A | `index.html` | `views/pages/home.ejs` | `GET /` | `terracotta_warehouse_management_showcase.png`, `wms_sjlm_geka_ui_showcase_board.png` |
 | B | `login.html` | `views/pages/login.ejs` | `GET /login`, `POST /login` | `wms_sjlm_geka_ui_showcase_board.png` |
-| C | `pages/dashboard.html` | `views/pages/dashboard.ejs` | `GET /dashboard` | `orange_warehouse_management_dashboard.png`, `orange_warehouse_management_dashboard_board.png`, `wms_dashboard_ui_showcase_poster.png`, `warehouse_management_dashboard_showcase.png` |
-| D | `pages/master-barang.html` | `views/pages/master-barang.ejs` | `GET /master-barang` | `wms_warehouse_management_ui_showcase.png`, `warehouse_management_ui_dashboard_board.png` |
+| C | `pages/dashboard.html` | `views/modules/dashboard.ejs` via `views/pages/preview.ejs` | `GET /dashboard` | `orange_warehouse_management_dashboard.png`, `orange_warehouse_management_dashboard_board.png`, `wms_dashboard_ui_showcase_poster.png`, `warehouse_management_dashboard_showcase.png` |
+| D | `pages/master-barang.html` | `views/modules/master-barang.ejs` via `views/pages/preview.ejs` | `GET /master-barang` | `wms_warehouse_management_ui_showcase.png`, `warehouse_management_ui_dashboard_board.png` |
 | E | `pages/permintaan.html` | `views/pages/permintaan.ejs` | `GET /permintaan` | `wms_permintaan_barang_approval_showcase.png`, `geka_warehouse_approval_dashboard_mockup.png` |
 | F | `pages/alokasi-internal.html` | `views/pages/alokasi-internal.ejs` | `GET /alokasi-internal` | `wms_internal_allocation_ui_ux_board.png` |
 | G | `pages/pengiriman-penerimaan.html` | `views/pages/pengiriman-penerimaan.ejs` | `GET /pengiriman-penerimaan` | `warehouse_shipping_receiving_ui_showcase.png` |

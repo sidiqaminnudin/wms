@@ -1,0 +1,16 @@
+<div class="page-title"><h1>Pengiriman &amp; Penerimaan</h1><p>Kelola proses keluar dan masuk barang secara end-to-end.</p></div>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Pengiriman</h3><p>Daftar picking list dan konfirmasi pengiriman.</p></div><a class="btn btn-primary" aria-disabled="true" title="Tidak tersedia dalam preview">Buat Pengiriman</a></div>
+    <div class="grid grid-4">
+      <%- include('../partials/_kpi-card', {"label":"Menunggu Picking","value":"12","description":"Perlu diproses","variant":"orange","icon":"⧉"}) %>
+      <%- include('../partials/_kpi-card', {"label":"Siap Dikirim","value":"8","description":"Sudah lengkap","variant":"green","icon":"✓"}) %>
+      <%- include('../partials/_kpi-card', {"label":"Dalam Pengiriman","value":"5","description":"Sedang transit","variant":"blue","icon":"⇄"}) %>
+      <%- include('../partials/_kpi-card', {"label":"Selesai","value":"24","description":"Bulan ini","variant":"teal","icon":"✔"}) %>
+    </div>
+    <div class="table-wrap" style="margin-top:16px"><%- include('../partials/_data-table', {"headers":["No. Picking List","Tanggal","Tujuan","Jumlah Item","Total Qty","Kurir/Tim","Status"],"rows":[["PG-20260129-003","29 Jan 2026","CV Sumber Rezeki","12","240","SICEPAT - Rudi","\u003cspan class=\"status warning\">Menunggu Picking\u003c/span>"],["PG-20260129-002","29 Jan 2026","Toko Global Jaya","8","125","J&amp;T - Andi","\u003cspan class=\"status success\">Siap Dikirim\u003c/span>"],["PG-20260128-001","28 Jan 2026","PT Nusantara Abadi","15","320","Internal - Tim Gudang A","\u003cspan class=\"status info\">Dalam Pengiriman\u003c/span>"]]}) %></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Penerimaan Barang</h3><p>Verifikasi kuantitas, kondisi, dan penyelesaian selisih.</p></div><a class="btn btn-primary" aria-disabled="true" title="Tidak tersedia dalam preview">Buat Penerimaan</a></div>
+    <div class="table-wrap"><%- include('../partials/_data-table', {"headers":["No. Penerimaan","Tanggal","Supplier / Asal","Jumlah Item","Total Qty","Status"],"rows":[["PR-20260130-001","30 Jan 2026","PT Sejahtera Abadi","10","500","\u003cspan class=\"status info\">Proses Penerimaan\u003c/span>"],["PR-20260129-002","29 Jan 2026","CV Prima Jaya","8","320","\u003cspan class=\"status success\">Selesai\u003c/span>"],["PR-20260128-001","28 Jan 2026","PT Global Supplier","12","750","\u003cspan class=\"status danger\">Ada Selisih\u003c/span>"]]}) %></div>
+    <div class="notice" style="margin-top:16px"><strong>Resolusi selisih barang</strong><div style="margin-top:8px">Contoh kasus: jumlah diterima 20 pcs kurang dari PO, segel kemasan tidak lengkap, dan 5 pcs barang rusak. Gunakan modal/flyout untuk menyimpan penyelesaian selisih.</div></div>
+  </div>
+</section>

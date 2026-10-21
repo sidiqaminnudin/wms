@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (inner && Number.isFinite(value)) inner.style.width = `${Math.max(0, Math.min(100, value))}%`;
   });
 
+  document.querySelectorAll('[data-preview-toast]').forEach(button => button.addEventListener('click', () => {
+    const toast = button.closest('section')?.querySelector('.toast');
+    if (toast && window.bootstrap?.Toast) window.bootstrap.Toast.getOrCreateInstance(toast).show();
+  }));
+
   const sidebar = document.getElementById('appSidebar');
   if (!sidebar) return;
   const toggles = [...document.querySelectorAll('[data-sidebar-toggle]')];

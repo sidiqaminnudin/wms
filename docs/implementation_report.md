@@ -2,28 +2,29 @@
 
 ## Status
 
-Phase 0 documentation is available. Phase 1 is **partially implemented and validated**, not complete or production-ready. Original static HTML, CSS, JavaScript and reference assets have not been edited in this increment.
+Phase 0 documentation is available. Phase 1 UI shell is **implemented and validated**, but it is not production-ready and does not claim pixel-perfect reference fidelity. Original static HTML, CSS, JavaScript and reference assets remain preserved; application module templates are maintained separately under `views/modules/`.
 
-The application currently provides Express/EJS public views and a shared preview sidebar/topbar. Module content is extracted from trusted repository-owned HTML at request time; it is not yet split into module EJS views or fully reusable data-driven components. Authentication is deliberately unavailable and the login button is disabled.
+The application currently provides Express/EJS public views, dedicated EJS module views under `views/modules/`, and a shared preview sidebar/topbar. Module views are generated from the preserved static bundle during implementation and rendered as committed application templates; the original bundle remains unchanged. Authentication is deliberately unavailable and the login button is disabled.
 
 ## Validation performed
 
-- `npm test`: 9 tests passed, covering health, public rendering, PWA manifest metadata, all 11 mapped module preview routes, custom stylesheet availability, 404 handling, preview-disabled redirect, and all six reusable partials including escaping and optional defaults.
-- `npm run test:ui`: 4 Chromium browser tests passed, covering desktop homepage width, mobile dashboard width/menu interaction at 390 × 844, keyboard focus trapping/Escape/backdrop/resize behavior, and disabled preview login state.
+- `npm test`: 10 tests passed, covering health, public rendering, PWA manifest metadata, all 11 mapped module preview routes, reusable component integration, custom stylesheet availability, 404 handling, preview-disabled redirect, and all reusable partials including escaping and optional defaults.
+- `npm run test:ui`: 8 Chromium browser tests passed, covering the shell, sidebar keyboard behavior, all 11 module routes at 390/768/1440px with screenshots, image/error checks, mobile table-card labels, disabled form labels, and disabled preview login state.
 - Syntax checks passed for application, server and browser JavaScript.
 - Browser testing exposed horizontal overflow on the mobile dashboard. Minimum-width constraints, topbar wrapping and responsive chart columns corrected it without hiding horizontal overflow globally.
 
 These checks do not constitute reference-board visual comparison, comprehensive accessibility testing, all-page responsive coverage or backend/security certification. No screenshot fidelity claim is made.
 
-## Remaining Phase 1 work
+## Phase 1 completion notes
 
-- Extract module views and reusable KPI/table/form components instead of runtime HTML slicing.
-- Integrate the new timeline, modal, toast, empty-state, pagination and tabs partials into data-driven module views.
-- Complete responsive card-style table views.
-- Implement or clearly disable placeholder controls and notification/company/warehouse interactions.
-- Complete reference-image visual audit and screenshot comparisons across desktop/tablet/mobile.
-- Add broader asset, responsive and accessibility coverage.
-- PWA manifest and theme metadata are present. App icons, installability verification and offline behavior remain deferred; no service worker caches operational pages.
+- All 11 module routes render committed EJS templates under `views/modules/`; request-time reads/slicing of `pages/*.html` have been removed.
+- KPI, status badge, data table, and form-field partials are integrated into module templates. Timeline, modal, toast, empty-state, pagination and tabs are demonstrated on the reference/components preview route.
+- Preview-only actions, filters, search, notifications and forms are clearly disabled or labeled; no control posts operational data.
+- Responsive card-style table views, mobile sidebar focus behavior, reduced-motion styling, manifest metadata and accessibility labels are covered by automated tests.
+- Reference screenshots are generated at 390/768/1440px for all modules. Pixel-level comparison against supplied boards remains a manual design review; no pixel-fidelity or production-readiness claim is made.
+- PWA app icons, installability verification, offline caching and service worker remain deferred.
+
+Phase 2 is intentionally not started: database, sessions, authentication, CSRF, RBAC and company/warehouse scoping remain unimplemented.
 
 ## Later phases
 

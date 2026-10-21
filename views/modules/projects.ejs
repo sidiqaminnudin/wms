@@ -1,0 +1,9 @@
+<div class="page-title"><h1>Proyek Instansi</h1><p>Kelola proyek instansi, alokasi barang, dan pantau progres realisasi secara transparan.</p></div>
+<section class="grid grid-4" style="margin-top:18px">
+  <div class="kpi"><div><div style="color:var(--muted)">Total Proyek</div><h3>12</h3></div><div class="icon blue">12</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Sedang Berjalan</div><h3>8</h3></div><div class="icon green">8</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Selesai</div><h3>3</h3></div><div class="icon orange">3</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Tertunda</div><h3>1</h3></div><div class="icon red">1</div></div>
+</section>
+<section class="card" style="margin-top:18px"><div class="section-head"><div><h3>Daftar Proyek Instansi</h3><p>Contoh list proyek untuk kebutuhan pengadaan dan alokasi barang.</p></div><a class="btn btn-primary" aria-disabled="true" title="Tidak tersedia dalam preview">Proyek Baru</a></div>
+<div class="table-wrap"><%- include('../partials/_data-table', {"headers":["Kode Proyek","Nama Proyek","Instansi/Klien","Lokasi","Jumlah Item","Progres","Status"],"rows":[["PRJ-2026-001","Pembangunan Gudang Utama","Dinas Perhubungan","Jakarta Timur","48","80%","\u003cspan class=\"status success\">Berjalan\u003c/span>"],["PRJ-2026-002","Perbaikan Infrastruktur","Pemda DKI Jakarta","Jakarta Pusat","32","60%","\u003cspan class=\"status success\">Berjalan\u003c/span>"],["PRJ-2026-003","Pengadaan Sarana Kantor","Kementerian PUPR","Jakarta Selatan","15","100%","\u003cspan class=\"status info\">Selesai\u003c/span>"],["PRJ-2026-004","Revitalisasi Fasilitas","Pemda Jawa Barat","Bandung","28","40%","\u003cspan class=\"status warning\">Berjalan\u003c/span>"],["PRJ-2026-005","Pengadaan Alat Teknik","Dinas Pendidikan","Jakarta Barat","20","0%","\u003cspan class=\"status danger\">Tertunda\u003c/span>"]]}) %></div></section>

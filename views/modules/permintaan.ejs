@@ -1,0 +1,34 @@
+<div class="section-head"><div><h1 style="margin:0">Permintaan Barang &amp; Approval</h1><p>Pengelolaan permintaan barang antar gudang dengan alur approval terstruktur.</p></div><a class="btn btn-primary" aria-disabled="true" title="Tidak tersedia dalam preview">Buat Permintaan</a></div>
+<section class="card"><div class="tabs"><a class="active" aria-disabled="true" title="Tidak tersedia dalam preview">Semua</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Menunggu</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Diproses</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Disetujui</a><a aria-disabled="true" title="Tidak tersedia dalam preview">Ditolak</a></div>
+<div class="table-wrap"><%- include('../partials/_data-table', {"headers":["No. Permintaan","Tanggal","Pemohon","Gudang Asal","Gudang Tujuan","Jumlah Item","Prioritas","Status"],"rows":[["PR-202601-0012","28 Jan 2026","Budi Santoso","Gudang 1","Gudang 3","5","\u003cspan class=\"status danger\">Tinggi\u003c/span>","\u003cspan class=\"status warning\">Menunggu\u003c/span>"],["PR-202601-0011","27 Jan 2026","Siti Rahma","Gudang 2","Gudang 4","3","\u003cspan class=\"status info\">Normal\u003c/span>","\u003cspan class=\"status info\">Diproses\u003c/span>"],["PR-202601-0010","27 Jan 2026","Andi Pratama","Gudang 1","Gudang 4","8","\u003cspan class=\"status info\">Normal\u003c/span>","\u003cspan class=\"status success\">Disetujui\u003c/span>"],["PR-202601-0009","26 Jan 2026","Hadi Hartono","Gudang 3","Gudang 1","2","\u003cspan class=\"status danger\">Tinggi\u003c/span>","\u003cspan class=\"status danger\">Ditolak\u003c/span>"]]}) %></div></section>
+<section class="grid grid-3" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Buat Permintaan</h3><p>Form slicing untuk pembuatan permintaan barang.</p></div></div>
+    <div class="form-grid">
+      <%- include('../partials/_form-field', {"id":"permintaan-field-1","label":"Perusahaan","control":"\u003cselect id=\"permintaan-field-1\" disabled>\u003coption>SJLM\u003c/option>\u003c/select>"}) %>
+      <%- include('../partials/_form-field', {"id":"permintaan-field-2","label":"Tanggal Permintaan","control":"\u003cinput id=\"permintaan-field-2\" disabled value=\"28 Jan 2026\">"}) %>
+      <%- include('../partials/_form-field', {"id":"permintaan-field-3","label":"Gudang Asal","control":"\u003cselect id=\"permintaan-field-3\" disabled>\u003coption>Gudang 1 - Main Warehouse\u003c/option>\u003c/select>"}) %>
+      <%- include('../partials/_form-field', {"id":"permintaan-field-4","label":"Gudang Tujuan","control":"\u003cselect id=\"permintaan-field-4\" disabled>\u003coption>Gudang 3 - Cabang Cikarang\u003c/option>\u003c/select>"}) %>
+      <%- include('../partials/_form-field', {"id":"permintaan-field-5","label":"Keperluan","control":"\u003cselect id=\"permintaan-field-5\" disabled>\u003coption>Operasional\u003c/option>\u003c/select>"}) %>
+      <%- include('../partials/_form-field', {"id":"permintaan-field-6","label":"Prioritas","control":"\u003cselect id=\"permintaan-field-6\" disabled>\u003coption>Normal\u003c/option>\u003coption>Tinggi\u003c/option>\u003c/select>"}) %>
+    </div>
+    <div class="input-group" style="margin-top:14px"><label>Catatan Permintaan</label><textarea>Permintaan untuk kebutuhan stok operasional area picking.</textarea></div>
+    <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px"><button class="btn btn-secondary" type="button" disabled title="Tidak tersedia dalam preview">Simpan Draft</button><button class="btn btn-primary" type="button" disabled title="Tidak tersedia dalam preview">Ajukan Permintaan</button></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Detail Permintaan</h3><p>View detail dokumen permintaan.</p></div><span class="badge warning">Menunggu Approval</span></div>
+    <div class="stat-line"><span>Pemohon</span><strong>Budi Santoso / Staff Gudang</strong></div>
+    <div class="stat-line"><span>Gudang Asal</span><strong>Gudang 1 - Main Warehouse</strong></div>
+    <div class="stat-line"><span>Gudang Tujuan</span><strong>Gudang 3 - Cabang Cikarang</strong></div>
+    <div class="stat-line"><span>Keperluan</span><strong>Operasional</strong></div>
+    <div class="stat-line"><span>Prioritas</span><strong>Tinggi</strong></div>
+    <div class="table-wrap" style="margin-top:12px"><%- include('../partials/_data-table', {"headers":["Kode","Nama Barang","Jumlah","Satuan","Status"],"rows":[["BRG-001","Kardus Box 40x40","50","Pcs","\u003cspan class=\"status warning\">Menunggu\u003c/span>"],["BRG-002","Plastic Wrap","20","Roll","\u003cspan class=\"status warning\">Menunggu\u003c/span>"],["BRG-003","Lakban Coklat","10","Roll","\u003cspan class=\"status warning\">Menunggu\u003c/span>"]]}) %></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Timeline Approval</h3><p>Urutan approval bertingkat.</p></div></div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Permintaan Dibuat</strong><div style="color:var(--muted)">28 Jan 2026 10:22 · oleh Budi Santoso</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Manager Gudang</strong><div style="color:var(--muted)">Menunggu persetujuan</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Head Logistik</strong><div style="color:var(--muted)">Menunggu persetujuan</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Direktur Operasional</strong><div style="color:var(--muted)">Menunggu persetujuan</div></div></div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:16px"><button class="btn btn-secondary" style="color:var(--danger)" type="button" disabled title="Tidak tersedia dalam preview">Tolak</button><button class="btn btn-secondary" type="button" disabled title="Tidak tersedia dalam preview">Setujui Sebagian</button><button class="btn btn-primary" type="button" disabled title="Tidak tersedia dalam preview">Setujui</button></div>
+  </div>
+</section>

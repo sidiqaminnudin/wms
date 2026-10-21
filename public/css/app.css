@@ -67,6 +67,21 @@
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
+/* Compact mobile tables without hiding columns or introducing page overflow. */
+@media (max-width: 760px) {
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .table-wrap table { min-width: 0; width: 100%; }
+  .table-wrap thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .table-wrap tbody, .table-wrap tr, .table-wrap td { display: block; width: 100%; }
+  .table-wrap tr { margin-bottom: 14px; border: 1px solid var(--line); border-radius: 14px; padding: 8px; }
+  .table-wrap td { white-space: normal; overflow-wrap: anywhere; }
+  .table-wrap td::before { content: attr(data-label); display: block; font-weight: 700; color: var(--primary-dark); font-size: 12px; }
+  .card .table-wrap table { font-size: 12px; }
+  .section-head { flex-wrap: wrap; gap: 12px; }
+  .section-head > .btn { white-space: normal; }
+  .top-actions { flex-wrap: wrap; }
+}
+
 /* Empty-state placeholder */
 .empty-state { padding: 48px 24px; }
 .empty-state-icon { font-size: 48px; color: var(--muted); display: block; margin-bottom: 16px; }
