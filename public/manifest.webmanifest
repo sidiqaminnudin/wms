@@ -1,0 +1,13 @@
+{
+  "name": "WMS SJLM & GEKA",
+  "short_name": "WMS SJLM",
+  "description": "Warehouse Management System untuk operasional SJLM dan GEKA.",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#f97316",
+  "categories": ["business", "productivity"]
+}

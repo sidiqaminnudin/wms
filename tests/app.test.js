@@ -31,6 +31,22 @@ test('homepage and preview dashboard render through EJS', async () => {
   assert.match(dashboard.body, /Dashboard/);
 });
 
+test('public manifest is available and advertises the app shell', async () => {
+  const response = await request('/public/manifest.webmanifest');
+  assert.equal(response.status, 200);
+  const manifest = JSON.parse(response.body);
+  assert.equal(manifest.name, 'WMS SJLM & GEKA');
+  assert.equal(manifest.display, 'standalone');
+  assert.equal(manifest.start_url, '/');
+  assert.equal(manifest.scope, '/');
+  assert.equal(manifest.theme_color, '#f97316');
+  for (const route of ['/', '/login', '/dashboard']) {
+    const page = await request(route);
+    assert.match(page.body, /rel="manifest" href="\/public\/manifest.webmanifest"/);
+    assert.match(page.body, /name="theme-color" content="#f97316"/);
+  };
+});
+
 test('all mapped preview routes render and static assets are available', async () => {
   const routes = ['dashboard', 'master-barang', 'permintaan', 'alokasi-internal', 'pengiriman-penerimaan', 'teknisi-stockopname', 'procurement', 'projects', 'reports', 'admin-settings', 'references'];
   for (const route of routes) {

@@ -8,7 +8,7 @@ The application currently provides Express/EJS public views and a shared preview
 
 ## Validation performed
 
-- `npm test`: 8 tests passed, covering health, public rendering, all 11 mapped module preview routes, custom stylesheet availability, 404 handling, preview-disabled redirect, and all six reusable partials including escaping and optional defaults.
+- `npm test`: 9 tests passed, covering health, public rendering, PWA manifest metadata, all 11 mapped module preview routes, custom stylesheet availability, 404 handling, preview-disabled redirect, and all six reusable partials including escaping and optional defaults.
 - `npm run test:ui`: 4 Chromium browser tests passed, covering desktop homepage width, mobile dashboard width/menu interaction at 390 × 844, keyboard focus trapping/Escape/backdrop/resize behavior, and disabled preview login state.
 - Syntax checks passed for application, server and browser JavaScript.
 - Browser testing exposed horizontal overflow on the mobile dashboard. Minimum-width constraints, topbar wrapping and responsive chart columns corrected it without hiding horizontal overflow globally.
@@ -22,7 +22,8 @@ These checks do not constitute reference-board visual comparison, comprehensive 
 - Complete responsive card-style table views.
 - Implement or clearly disable placeholder controls and notification/company/warehouse interactions.
 - Complete reference-image visual audit and screenshot comparisons across desktop/tablet/mobile.
-- Add broader asset, responsive and accessibility coverage; PWA manifest remains pending.
+- Add broader asset, responsive and accessibility coverage.
+- PWA manifest and theme metadata are present. App icons, installability verification and offline behavior remain deferred; no service worker caches operational pages.
 
 ## Later phases
 
