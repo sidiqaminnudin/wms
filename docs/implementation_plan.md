@@ -27,10 +27,13 @@
 
 ## Phase 2 — Authentication and Multi-company
 
-- PostgreSQL session store, Argon2id password hashes, CSRF, secure cookie policy and login rate limiting.
-- User/company/role/permission/warehouse-scope middleware.
-- Generic login errors, logout/session rotation/expiration, server-side active company.
-- Tests for unauthorized access and cross-company ID substitution.
+- [x] PostgreSQL/session/Argon2id dependency foundation, fail-closed environment validation and access-control/session migration.
+- [x] Transactional migration runner, server-side sessions, secure cookie policy, CSRF + Origin checks and login rate limiting foundation.
+- [x] Generic login errors, logout/session rotation/expiration and server-side active-company switching foundation.
+- [x] Unit/security tests for missing configuration, anonymous access and CSRF/origin enforcement.
+- [ ] Connect and validate against PostgreSQL; create a controlled admin seed workflow.
+- [ ] Complete permission and warehouse-scope middleware for every resource.
+- [ ] Integrate browser login/logout/CSRF flow and test cross-company ID substitution.
 
 ## Phase 3 — Master Data and Inventory
 

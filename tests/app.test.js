@@ -21,6 +21,12 @@ test('health endpoint reports UI foundation stage', async () => {
   assert.match(response.body, /ui-foundation/);
 });
 
+test('auth API fails closed until PostgreSQL is configured', async () => {
+  const response = await request('/api/v1/auth/login');
+  assert.equal(response.status, 503);
+  assert.match(response.body, /AUTH_UNAVAILABLE/);
+});
+
 test('homepage and preview dashboard render through EJS', async () => {
   const home = await request('/');
   assert.equal(home.status, 200);

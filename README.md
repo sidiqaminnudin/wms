@@ -62,6 +62,17 @@ npm test
 npm run test:ui
 ```
 
+## Phase 2 foundation (belum production-ready)
+
+Auth API foundation tersedia di `/api/v1/auth`: `GET /csrf`, `POST /login`, `GET /me`, `POST /active-company`, dan `POST /logout`. Login API memakai `username` + `password`; UI login masih disabled hingga integrasi browser/database selesai.
+
+- Isi `DATABASE_URL`, `SESSION_SECRET` (minimal 32 karakter), dan `APP_ORIGIN` (origin persis, misalnya `http://localhost:3000`) pada environment lokal.
+- Jalankan `npm run migrate` pada PostgreSQL yang disiapkan untuk aplikasi. Migration hanya menambah schema; tidak membuat user/password default dan tidak drop/reset database.
+- Request mutasi wajib menyertakan cookie session, `Origin` yang sesuai `APP_ORIGIN`, dan `X-CSRF-Token` dari `GET /api/v1/auth/csrf`.
+- Tanpa konfigurasi database/session yang lengkap, auth API mengembalikan 503. Production gagal startup tanpa database URL dan secret kuat.
+- Production cookies memakai Secure/HttpOnly/SameSite=Lax; deployment TLS/reverse-proxy masih perlu validasi. Jangan mengaktifkan produksi sebelum RBAC/warehouse scope dan integration tests lengkap.
+- Migration SQL belum dijalankan terhadap database pada checkpoint ini; login, session persistence dan active-company switching belum diklaim tervalidasi end-to-end.
+
 ## Membuka bundle statis asli
 
 Cukup buka `index.html` atau `login.html` di browser.

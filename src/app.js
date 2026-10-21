@@ -2,6 +2,10 @@ import express from 'express';
 import { randomUUID } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import helmet from 'helmet';
+import { getConfig } from './config.js';
+import { createPool } from './db.js';
+import { createAuth, authError } from './auth.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 export const navigation = [
@@ -14,7 +18,7 @@ export const navigation = [
   ['references', 'Referensi Desain', 'images']
 ];
 
-export function createApp({ preview = process.env.UI_PREVIEW === 'true' && process.env.NODE_ENV !== 'production' } = {}) {
+export function createApp({ preview = getConfig().preview, config = getConfig(), pool = createPool(config) } = {}) {
   const app = express();
   app.disable('x-powered-by');
   app.set('views', path.join(root, 'views'));
@@ -25,7 +29,15 @@ export function createApp({ preview = process.env.UI_PREVIEW === 'true' && proce
     res.setHeader('Referrer-Policy', 'same-origin');
     next();
   });
-  app.use(express.urlencoded({ extended: false }));
+  // Existing slicing uses inline styles; CSP rollout requires a separate template audit.
+  app.use(helmet({ contentSecurityPolicy: false, strictTransportSecurity: config.isProduction ? undefined : false }));
+  app.use(express.urlencoded({ extended: false, limit: '16kb' }));
+  app.use(express.json({ limit: '16kb' }));
+  if (pool && config.sessionSecret?.length >= 32) {
+    app.use('/api/v1/auth', createAuth({ pool, secret: config.sessionSecret, production: config.isProduction, origin: config.appOrigin }));
+  } else {
+    app.use('/api/v1/auth', (req, res) => authError(req, res, 503, 'AUTH_UNAVAILABLE', 'Autentikasi belum dikonfigurasi.'));
+  }
   app.use('/public', express.static(path.join(root, 'public')));
   app.use('/assets/css', express.static(path.join(root, 'assets/css')));
   app.use('/vendor/bootstrap', express.static(path.join(root, 'node_modules/bootstrap/dist')));

@@ -24,7 +24,7 @@ These checks do not constitute reference-board visual comparison, comprehensive 
 - Reference screenshots are generated at 390/768/1440px for all modules. Pixel-level comparison against supplied boards remains a manual design review; no pixel-fidelity or production-readiness claim is made.
 - PWA app icons, installability verification, offline caching and service worker remain deferred.
 
-Phase 2 is intentionally not started: database, sessions, authentication, CSRF, RBAC and company/warehouse scoping remain unimplemented.
+Phase 2 foundation is now started but not complete: PostgreSQL/session/Argon2 dependencies, fail-closed configuration, access-control migration, transactional migration runner, CSRF + Origin checks, login rate limiting, session rotation, logout and scoped active-company API foundations are present. Database connectivity, browser login integration, complete permission middleware, warehouse scoping on every resource, and production deployment validation remain before Phase 2 acceptance.
 
 ## Later phases
 
