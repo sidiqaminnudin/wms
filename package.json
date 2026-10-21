@@ -10,6 +10,7 @@
     "start": "node --env-file-if-exists=.env src/server.js",
     "dev": "node --watch --env-file-if-exists=.env src/server.js",
     "migrate": "node --env-file-if-exists=.env src/migrate.js",
+    "seed:admin": "node --env-file-if-exists=.env scripts/seed-admin.js",
     "test": "node --test tests/*.test.js",
     "test:ui": "playwright test"
   },

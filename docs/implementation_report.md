@@ -4,12 +4,12 @@
 
 Phase 0 documentation is available. Phase 1 UI shell is **implemented and validated**, but it is not production-ready and does not claim pixel-perfect reference fidelity. Original static HTML, CSS, JavaScript and reference assets remain preserved; application module templates are maintained separately under `views/modules/`.
 
-The application currently provides Express/EJS public views, dedicated EJS module views under `views/modules/`, and a shared preview sidebar/topbar. Module views are generated from the preserved static bundle during implementation and rendered as committed application templates; the original bundle remains unchanged. Authentication is deliberately unavailable and the login button is disabled.
+The application currently provides Express/EJS public views, dedicated EJS module views under `views/modules/`, and a shared preview sidebar/topbar. Module views are generated from the preserved static bundle during implementation and rendered as committed application templates; the original bundle remains unchanged. Authentication is available when PostgreSQL and a strong session secret are configured; preview mode remains available without them and auth endpoints fail closed with 503.
 
 ## Validation performed
 
-- `npm test`: 10 tests passed, covering health, public rendering, PWA manifest metadata, all 11 mapped module preview routes, reusable component integration, custom stylesheet availability, 404 handling, preview-disabled redirect, and all reusable partials including escaping and optional defaults.
-- `npm run test:ui`: 8 Chromium browser tests passed, covering the shell, sidebar keyboard behavior, all 11 module routes at 390/768/1440px with screenshots, image/error checks, mobile table-card labels, disabled form labels, and disabled preview login state.
+- `npm test`: 15 tests pass by default (one PostgreSQL integration test is skipped unless `TEST_DATABASE_URL` is set); with PostgreSQL integration enabled, all 16 tests pass, covering auth login, session rotation, CSRF/origin, company and warehouse isolation, permission revocation, logout, health, public rendering, preview routes, reusable components, and escaping.
+- `npm run test:ui`: 9 Chromium browser tests pass, covering the shell, sidebar keyboard behavior, all module routes at 390/768/1440px, image/error checks, mobile table-card labels, and the active login form.
 - Syntax checks passed for application, server and browser JavaScript.
 - Browser testing exposed horizontal overflow on the mobile dashboard. Minimum-width constraints, topbar wrapping and responsive chart columns corrected it without hiding horizontal overflow globally.
 
@@ -24,10 +24,10 @@ These checks do not constitute reference-board visual comparison, comprehensive 
 - Reference screenshots are generated at 390/768/1440px for all modules. Pixel-level comparison against supplied boards remains a manual design review; no pixel-fidelity or production-readiness claim is made.
 - PWA app icons, installability verification, offline caching and service worker remain deferred.
 
-Phase 2 foundation is now started but not complete: PostgreSQL/session/Argon2 dependencies, fail-closed configuration, access-control migration, transactional migration runner, CSRF + Origin checks, login rate limiting, session rotation, logout and scoped active-company API foundations are present. Database connectivity, browser login integration, complete permission middleware, warehouse scoping on every resource, and production deployment validation remain before Phase 2 acceptance.
+Phase 2 authentication/security foundation is implemented and locally validated: PostgreSQL/session/Argon2id, fail-closed configuration, access-control migration, transactional migration runner, CSRF + Origin checks, rate limiting, session rotation, logout, active-company switching, permission resolution, warehouse-scoped auth endpoints, browser login/account/logout flow, and controlled admin provisioning. Complete operational-resource authorization, inventory workflows, MFA, and production deployment validation remain before full product acceptance.
 
 ## Later phases
 
-PostgreSQL migrations, authentication/sessions, authorization, scoped company/warehouse queries, APIs, immutable inventory ledger and operational workflows remain unimplemented. Do not use preview data for operational decisions. Preview-disabled redirects are not authentication middleware.
+Immutable inventory ledger, operational workflows, complete resource APIs, MFA and production deployment certification remain later work. Authentication/session, company selection, permission resolution, and warehouse-scoped auth endpoints are implemented and tested. Do not use Phase 1 preview data for operational decisions; preview-disabled redirects are not authentication middleware.
 
-Preview is enabled only by explicit local configuration in the default application factory and defaults off in production. No database was created, reset or modified.
+Preview is enabled only by explicit local configuration and defaults off in production. Validation created and removed isolated local test databases/schemas; no existing application database was reset. Chromium login, company switching, reload persistence and logout are exercised within the PostgreSQL integration test.

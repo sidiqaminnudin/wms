@@ -11,7 +11,7 @@ function response() {
 test('production fails closed without database and a strong session secret', () => {
   assert.throws(() => getConfig({ NODE_ENV: 'production' }), /Production requires/);
   assert.throws(() => getConfig({ PORT: 'invalid' }), /PORT/);
-  const config = getConfig({ NODE_ENV: 'production', DATABASE_URL: 'postgresql://localhost/wms', SESSION_SECRET: 'x'.repeat(32), UI_PREVIEW: 'true' });
+  const config = getConfig({ NODE_ENV: 'production', DATABASE_URL: 'postgresql://localhost/wms', SESSION_SECRET: 'x'.repeat(32), APP_ORIGIN: 'https://wms.example', UI_PREVIEW: 'true' });
   assert.equal(config.preview, false);
 });
 

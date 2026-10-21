@@ -15,12 +15,14 @@
   <div class="auth-right">
     <div class="logo" style="color:var(--text)"><div class="logo-mark"></div><div><div>WMS<br>SJLM &amp; GEKA</div><small style="color:var(--muted)">Login username &amp; password</small></div></div>
     <div style="margin-top:34px"><h2 style="margin:0 0 10px;font-size:34px">Selamat Datang</h2><p style="color:var(--muted);margin:0 0 24px">Masuk ke WMS SJLM &amp; GEKA untuk melanjutkan.</p></div>
-    <form novalidate onsubmit="return false;">
+    <form id="loginForm" novalidate>
       <div class="input-group"><label for="username">Username</label><input id="username" name="username" placeholder="Masukkan username" required autocomplete="username"></div>
       <div class="input-group"><label for="password">Password</label><input id="password" name="password" type="password" placeholder="Masukkan password" required autocomplete="current-password"></div>
-      <button class="btn btn-primary" style="width:100%;margin-top:8px" type="button" disabled>Masuk — segera tersedia</button>
+      <button class="btn btn-primary" style="width:100%;margin-top:8px" type="submit">Masuk</button>
+      <p id="loginStatus" class="notice" role="alert" hidden></p>
     </form>
-    <div class="notice" style="margin-top:18px">Backend autentikasi akan tersedia pada Phase 2. Saat ini tampilan ini bersifat preview.</div>
+    <div class="notice" style="margin-top:18px">Gunakan akun yang dibuat administrator. Sesi dilindungi cookie HttpOnly dan CSRF token.</div>
+    <script src="/public/js/login.js"></script>
   </div>
 </section>
 </body></html>

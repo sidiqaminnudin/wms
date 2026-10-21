@@ -31,9 +31,9 @@
 - [x] Transactional migration runner, server-side sessions, secure cookie policy, CSRF + Origin checks and login rate limiting foundation.
 - [x] Generic login errors, logout/session rotation/expiration and server-side active-company switching foundation.
 - [x] Unit/security tests for missing configuration, anonymous access and CSRF/origin enforcement.
-- [ ] Connect and validate against PostgreSQL; create a controlled admin seed workflow.
-- [ ] Complete permission and warehouse-scope middleware for every resource.
-- [ ] Integrate browser login/logout/CSRF flow and test cross-company ID substitution.
+- [x] Connect and validate against PostgreSQL; create a controlled admin seed workflow.
+- [x] Add permission and warehouse-scope middleware for the implemented auth/warehouse resources; apply the same pattern to future operational resources.
+- [x] Integrate browser login/logout/CSRF flow and test cross-company ID substitution; full operational-resource coverage remains in later phases.
 
 ## Phase 3 — Master Data and Inventory
 

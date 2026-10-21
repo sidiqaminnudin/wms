@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import { createApp } from '../src/app.js';
 
-function request(path) {
-  const server = createApp({ preview: true }).listen(0);
+function request(path, options = { preview: true }) {
+  const server = createApp(options).listen(0);
   const { port } = server.address();
   return new Promise((resolve, reject) => {
     http.get({ port, path }, response => {
@@ -22,7 +22,7 @@ test('health endpoint reports UI foundation stage', async () => {
 });
 
 test('auth API fails closed until PostgreSQL is configured', async () => {
-  const response = await request('/api/v1/auth/login');
+  const response = await request('/api/v1/auth/login', { preview: true, pool: null });
   assert.equal(response.status, 503);
   assert.match(response.body, /AUTH_UNAVAILABLE/);
 });
@@ -46,7 +46,7 @@ test('public manifest is available and advertises the app shell', async () => {
   assert.equal(manifest.start_url, '/');
   assert.equal(manifest.scope, '/');
   assert.equal(manifest.theme_color, '#f97316');
-  for (const route of ['/', '/login', '/dashboard']) {
+  for (const route of ['/', '/login', '/account', '/dashboard']) {
     const page = await request(route);
     assert.match(page.body, /rel="manifest" href="\/public\/manifest.webmanifest"/);
     assert.match(page.body, /name="theme-color" content="#f97316"/);

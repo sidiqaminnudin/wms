@@ -1,0 +1,6 @@
+<%- include('../partials/head', { bodyClass: 'auth' }) %>
+<section class="auth-card"><div class="auth-right" style="width:100%;max-width:760px;margin:auto">
+  <div class="logo" style="color:var(--text)"><div class="logo-mark"></div><div><div>WMS<br>SJLM &amp; GEKA</div><small style="color:var(--muted)">Account &amp; access scope</small></div></div>
+  <div style="margin-top:34px"><h1 style="margin:0 0 10px">Akun saya</h1><p id="accountStatus" class="notice" role="status">Memuat akses...</p></div>
+  <div id="accountData" hidden><h2 id="userName"></h2><label for="companySelect">Perusahaan aktif</label><select id="companySelect" class="form-select"></select><button id="switchCompany" class="btn btn-primary" style="margin-top:16px">Ganti perusahaan</button><h3 style="margin-top:28px">Gudang yang dapat diakses</h3><ul id="warehouseList"></ul><button id="logout" class="btn btn-outline-secondary" style="margin-top:16px">Keluar</button></div>
+</div></section><script src="/public/js/account.js"></script></body></html>

@@ -20,6 +20,7 @@ export const navigation = [
 
 export function createApp({ preview = getConfig().preview, config = getConfig(), pool = createPool(config) } = {}) {
   const app = express();
+  app.locals.pool = pool;
   app.disable('x-powered-by');
   app.set('views', path.join(root, 'views'));
   app.set('view engine', 'ejs');
@@ -34,7 +35,9 @@ export function createApp({ preview = getConfig().preview, config = getConfig(),
   app.use(express.urlencoded({ extended: false, limit: '16kb' }));
   app.use(express.json({ limit: '16kb' }));
   if (pool && config.sessionSecret?.length >= 32) {
-    app.use('/api/v1/auth', createAuth({ pool, secret: config.sessionSecret, production: config.isProduction, origin: config.appOrigin }));
+    const auth = createAuth({ pool, secret: config.sessionSecret, production: config.isProduction, origin: config.appOrigin });
+    app.use('/api/v1/auth', auth);
+    app.locals.close = async () => { await auth.close(); await pool.end(); };
   } else {
     app.use('/api/v1/auth', (req, res) => authError(req, res, 503, 'AUTH_UNAVAILABLE', 'Autentikasi belum dikonfigurasi.'));
   }
@@ -47,6 +50,7 @@ export function createApp({ preview = getConfig().preview, config = getConfig(),
   app.get('/health', (req, res) => res.json({ success: true, message: 'Server ready', data: { stage: 'ui-foundation' }, meta: {} }));
   app.get('/', (req, res) => res.render('pages/home', { title: 'WMS SJLM & GEKA' }));
   app.get('/login', (req, res) => res.render('pages/login', { title: 'Masuk — WMS' }));
+  app.get('/account', (req, res) => res.render('pages/account', { title: 'Akun — WMS' }));
   for (const [slug, title] of navigation) {
     app.get([`/${slug}`, ...(slug === 'admin-settings' ? ['/admin/settings'] : [])], (req, res) => {
       if (!preview) return res.redirect('/login');
@@ -56,6 +60,7 @@ export function createApp({ preview = getConfig().preview, config = getConfig(),
   app.use((req, res) => res.status(404).render('pages/message', { title: 'Halaman tidak ditemukan', message: 'Periksa alamat halaman atau kembali ke beranda.' }));
   app.use((error, req, res, next) => {
     console.error(JSON.stringify({ level: 'error', requestId: res.getHeader('X-Request-Id'), message: error.message }));
+    if (req.path.startsWith('/api/')) return authError(req, res, 500, 'INTERNAL_ERROR', 'Terjadi kesalahan pada server.');
     res.status(500).render('pages/message', { title: 'Terjadi kesalahan', message: 'Silakan coba kembali. Hubungi administrator jika masalah berlanjut.' });
   });
   return app;

@@ -44,8 +44,9 @@ test('mobile sidebar manages keyboard focus, dismissal and desktop resize', asyn
   await expect(page.locator('.sidebar-backdrop')).toHaveCount(0);
 });
 
-test('login explicitly identifies preview authentication state', async ({ page }) => {
+test('login exposes the active authentication form', async ({ page }) => {
   await page.goto('/login');
-  await expect(page.getByText(/Backend autentikasi akan tersedia/)).toBeVisible();
-  await expect(page.getByRole('button', { name: /segera tersedia/i })).toBeDisabled();
+  await expect(page.getByLabel('Username')).toBeVisible();
+  await expect(page.getByLabel('Password')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Masuk' })).toBeVisible();
 });

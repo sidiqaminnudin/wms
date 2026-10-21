@@ -64,14 +64,15 @@ npm run test:ui
 
 ## Phase 2 foundation (belum production-ready)
 
-Auth API foundation tersedia di `/api/v1/auth`: `GET /csrf`, `POST /login`, `GET /me`, `POST /active-company`, dan `POST /logout`. Login API memakai `username` + `password`; UI login masih disabled hingga integrasi browser/database selesai.
+Auth API tersedia di `/api/v1/auth`: `GET /csrf`, `POST /login`, `GET /me`, `GET /context`, `GET /warehouses`, `GET /warehouses/:warehouse_id`, `POST /active-company`, dan `POST /logout`. Login API memakai `username` + `password`; halaman `/login` menjalankan flow CSRF/session dan `/account` menampilkan company serta warehouse scope server-side.
 
 - Isi `DATABASE_URL`, `SESSION_SECRET` (minimal 32 karakter), dan `APP_ORIGIN` (origin persis, misalnya `http://localhost:3000`) pada environment lokal.
 - Jalankan `npm run migrate` pada PostgreSQL yang disiapkan untuk aplikasi. Migration hanya menambah schema; tidak membuat user/password default dan tidak drop/reset database.
 - Request mutasi wajib menyertakan cookie session, `Origin` yang sesuai `APP_ORIGIN`, dan `X-CSRF-Token` dari `GET /api/v1/auth/csrf`.
 - Tanpa konfigurasi database/session yang lengkap, auth API mengembalikan 503. Production gagal startup tanpa database URL dan secret kuat.
 - Production cookies memakai Secure/HttpOnly/SameSite=Lax; deployment TLS/reverse-proxy masih perlu validasi. Jangan mengaktifkan produksi sebelum RBAC/warehouse scope dan integration tests lengkap.
-- Migration SQL belum dijalankan terhadap database pada checkpoint ini; login, session persistence dan active-company switching belum diklaim tervalidasi end-to-end.
+- `npm run seed:admin` membuat satu admin menggunakan `ADMIN_USERNAME`, `ADMIN_NAME`, `ADMIN_PASSWORD`, dan optional `ADMIN_COMPANY_CODE`; credential wajib lewat environment dan username yang sudah ada ditolak.
+- Migration, login salah/benar, session rotation, CSRF/origin, company/warehouse isolation, permission revocation, dan logout telah divalidasi terhadap PostgreSQL lokal melalui integration test. Database test dibersihkan setelah pengujian.
 
 ## Membuka bundle statis asli
 
