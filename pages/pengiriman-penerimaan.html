@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>pengiriman-penerimaan.html</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>WMS<br>SJLM &amp; GEKA</div>
+          <small>Warehouse Management System</small>
+        </div>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Operasional</p>
+        <nav class="nav"><a class="" href="dashboard.html"><span class="dot"></span>Dashboard</a>
+<a class="" href="master-barang.html"><span class="dot"></span>Master Barang</a>
+<a class="" href="permintaan.html"><span class="dot"></span>Permintaan</a>
+<a class="" href="alokasi-internal.html"><span class="dot"></span>Alokasi Internal</a>
+<a class="active" href="pengiriman-penerimaan.html"><span class="dot"></span>Pengiriman & Penerimaan</a>
+<a class="" href="teknisi-stockopname.html"><span class="dot"></span>Teknisi & Stock Opname</a>
+<a class="" href="procurement.html"><span class="dot"></span>Procurement</a>
+<a class="" href="projects.html"><span class="dot"></span>Proyek Instansi</a>
+<a class="" href="reports.html"><span class="dot"></span>Laporan</a>
+<a class="" href="admin-settings.html"><span class="dot"></span>Administrasi</a>
+<a class="" href="references.html"><span class="dot"></span>Referensi Desain</a></nav>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Entitas</p>
+        <div class="company-stack">
+          <div class="company-card"><strong>SJLM</strong><small>Solusi Logistik Masa Depan</small></div>
+          <div class="company-card"><strong>GEKA</strong><small>Bersama Lebih Kuat</small></div>
+        </div>
+      </div>
+      <div class="side-section notice" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff3e8">
+        <strong>Catatan bundle</strong>
+        <div style="margin-top:8px;font-size:13px;line-height:1.55">Harga dibuat opsional. Login hanya memakai username dan password. Warna mengikuti identitas visual GEKA.</div>
+      </div>
+    </aside>
+    
+    <main class="content">
+      
+
+    <div class="topbar">
+      <input class="search" value="Cari nomor picking list, supplier, atau nama barang..." aria-label="search" />
+      <div class="top-actions">
+        <span class="badge primary">01 Jan 2026 - 31 Jan 2026</span>
+        <span class="badge success">Semua Gudang</span>
+        <div class="avatar"><div class="circle">AP</div><div><strong>Andi Pratama</strong><div style="font-size:12px;color:var(--muted)">Admin</div></div></div>
+      </div>
+    </div>
+    
+<div class="page-title"><h1>Pengiriman &amp; Penerimaan</h1><p>Kelola proses keluar dan masuk barang secara end-to-end.</p></div>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Pengiriman</h3><p>Daftar picking list dan konfirmasi pengiriman.</p></div><a class="btn btn-primary">Buat Pengiriman</a></div>
+    <div class="grid grid-4">
+      <div class="kpi"><div><div style="color:var(--muted)">Menunggu Picking</div><h3>12</h3><p>Perlu diproses</p></div><div class="icon orange">⧉</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Siap Dikirim</div><h3>8</h3><p>Sudah lengkap</p></div><div class="icon green">✓</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Dalam Pengiriman</div><h3>5</h3><p>Sedang transit</p></div><div class="icon blue">⇄</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Selesai</div><h3>24</h3><p>Bulan ini</p></div><div class="icon teal">✔</div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>No. Picking List</th><th>Tanggal</th><th>Tujuan</th><th>Jumlah Item</th><th>Total Qty</th><th>Kurir/Tim</th><th>Status</th></tr></thead><tbody>
+      <tr><td>PG-20260129-003</td><td>29 Jan 2026</td><td>CV Sumber Rezeki</td><td>12</td><td>240</td><td>SICEPAT - Rudi</td><td><span class="status warning">Menunggu Picking</span></td></tr>
+      <tr><td>PG-20260129-002</td><td>29 Jan 2026</td><td>Toko Global Jaya</td><td>8</td><td>125</td><td>J&amp;T - Andi</td><td><span class="status success">Siap Dikirim</span></td></tr>
+      <tr><td>PG-20260128-001</td><td>28 Jan 2026</td><td>PT Nusantara Abadi</td><td>15</td><td>320</td><td>Internal - Tim Gudang A</td><td><span class="status info">Dalam Pengiriman</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Penerimaan Barang</h3><p>Verifikasi kuantitas, kondisi, dan penyelesaian selisih.</p></div><a class="btn btn-primary">Buat Penerimaan</a></div>
+    <div class="table-wrap"><table><thead><tr><th>No. Penerimaan</th><th>Tanggal</th><th>Supplier / Asal</th><th>Jumlah Item</th><th>Total Qty</th><th>Status</th></tr></thead><tbody>
+      <tr><td>PR-20260130-001</td><td>30 Jan 2026</td><td>PT Sejahtera Abadi</td><td>10</td><td>500</td><td><span class="status info">Proses Penerimaan</span></td></tr>
+      <tr><td>PR-20260129-002</td><td>29 Jan 2026</td><td>CV Prima Jaya</td><td>8</td><td>320</td><td><span class="status success">Selesai</span></td></tr>
+      <tr><td>PR-20260128-001</td><td>28 Jan 2026</td><td>PT Global Supplier</td><td>12</td><td>750</td><td><span class="status danger">Ada Selisih</span></td></tr>
+    </tbody></table></div>
+    <div class="notice" style="margin-top:16px"><strong>Resolusi selisih barang</strong><div style="margin-top:8px">Contoh kasus: jumlah diterima 20 pcs kurang dari PO, segel kemasan tidak lengkap, dan 5 pcs barang rusak. Gunakan modal/flyout untuk menyimpan penyelesaian selisih.</div></div>
+  </div>
+</section>
+
+      <div class="footer-note">Bundle slicing statis untuk implementasi/adopsi layout WMS SJLM &amp; GEKA. File ini dimaksudkan sebagai fondasi UI, bukan aplikasi backend final.</div>
+    </main>
+  </div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

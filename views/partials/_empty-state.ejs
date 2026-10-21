@@ -1,0 +1,7 @@
+<div class="empty-state text-center">
+  <% if (locals.icon) { %><i class="bi bi-<%= locals.icon %> empty-state-icon" aria-hidden="true"></i><% } %>
+  <h2 class="h5"><%= title %></h2>
+  <% if (locals.message) { %><p class="text-muted mb-0"><%= locals.message %></p><% } %>
+  <% if (locals.action) { %><a class="btn btn-primary mt-3" href="<%= locals.action.href %>"><%= locals.action.label %></a><% } %>
+</div>
+

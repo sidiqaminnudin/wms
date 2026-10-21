@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>dashboard.html</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>WMS<br>SJLM &amp; GEKA</div>
+          <small>Warehouse Management System</small>
+        </div>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Operasional</p>
+        <nav class="nav"><a class="active" href="dashboard.html"><span class="dot"></span>Dashboard</a>
+<a class="" href="master-barang.html"><span class="dot"></span>Master Barang</a>
+<a class="" href="permintaan.html"><span class="dot"></span>Permintaan</a>
+<a class="" href="alokasi-internal.html"><span class="dot"></span>Alokasi Internal</a>
+<a class="" href="pengiriman-penerimaan.html"><span class="dot"></span>Pengiriman & Penerimaan</a>
+<a class="" href="teknisi-stockopname.html"><span class="dot"></span>Teknisi & Stock Opname</a>
+<a class="" href="procurement.html"><span class="dot"></span>Procurement</a>
+<a class="" href="projects.html"><span class="dot"></span>Proyek Instansi</a>
+<a class="" href="reports.html"><span class="dot"></span>Laporan</a>
+<a class="" href="admin-settings.html"><span class="dot"></span>Administrasi</a>
+<a class="" href="references.html"><span class="dot"></span>Referensi Desain</a></nav>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Entitas</p>
+        <div class="company-stack">
+          <div class="company-card"><strong>SJLM</strong><small>Solusi Logistik Masa Depan</small></div>
+          <div class="company-card"><strong>GEKA</strong><small>Bersama Lebih Kuat</small></div>
+        </div>
+      </div>
+      <div class="side-section notice" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff3e8">
+        <strong>Catatan bundle</strong>
+        <div style="margin-top:8px;font-size:13px;line-height:1.55">Harga dibuat opsional. Login hanya memakai username dan password. Warna mengikuti identitas visual GEKA.</div>
+      </div>
+    </aside>
+    
+    <main class="content">
+      
+
+    <div class="topbar">
+      <input class="search" value="Cari barang, permintaan, atau dokumen..." aria-label="search" />
+      <div class="top-actions">
+        <span class="badge primary">01 Jan 2026 - 31 Jan 2026</span>
+        <span class="badge success">Semua Gudang</span>
+        <div class="avatar"><div class="circle">AP</div><div><strong>Andi Pratama</strong><div style="font-size:12px;color:var(--muted)">Admin</div></div></div>
+      </div>
+    </div>
+    
+<div class="page-title"><h1>Dashboard</h1><p>Ringkasan aktivitas gudang SJLM &amp; GEKA secara real-time.</p></div>
+<section class="grid grid-4" style="margin-top:18px">
+  <div class="kpi"><div><div style="color:var(--muted)">Total SKU</div><h3>12.580</h3><p>Item terdaftar</p></div><div class="icon green">#</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Stok Tersedia</div><h3>8.420</h3><p>Item tersedia</p></div><div class="icon blue">■</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Stok Minimum</div><h3>1.250</h3><p>Perlu perhatian</p></div><div class="icon orange">!</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Permintaan Pending</div><h3>24</h3><p>Menunggu proses</p></div><div class="icon red">?</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Barang Transit</div><h3>18</h3><p>Dalam pengiriman</p></div><div class="icon purple">⇄</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Barang Diproses</div><h3>36</h3><p>Sedang ditangani</p></div><div class="icon orange">↺</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Penugasan Teknisi</div><h3>12</h3><p>Sedang berjalan</p></div><div class="icon teal">👥</div></div>
+  <div class="kpi"><div><div style="color:var(--muted)">Aktivitas Gudang</div><h3>156</h3><p>Hari ini</p></div><div class="icon blue">▦</div></div>
+</section>
+<section class="grid grid-3" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Pergerakan Stok Barang</h3><p>Grafik masuk dan keluar barang</p></div><span class="badge primary">Jan 2026</span></div>
+    <div class="bars">
+      <div class="bar"><span>1 Jan</span><div class="progress" data-progress="35"><span></span></div><strong>35</strong></div>
+      <div class="bar"><span>8 Jan</span><div class="progress" data-progress="58"><span></span></div><strong>58</strong></div>
+      <div class="bar"><span>15 Jan</span><div class="progress" data-progress="72"><span></span></div><strong>72</strong></div>
+      <div class="bar"><span>22 Jan</span><div class="progress" data-progress="64"><span></span></div><strong>64</strong></div>
+      <div class="bar"><span>31 Jan</span><div class="progress" data-progress="80"><span></span></div><strong>80</strong></div>
+    </div></div>
+  <div class="card"><div class="section-head"><div><h3>Komposisi Stok per Gudang</h3><p>Distribusi total SKU</p></div></div><div class="donut" data-label="12.580
+Total SKU"></div>
+    <div class="stat-line"><span>Gudang 1</span><span>42%</span></div>
+    <div class="stat-line"><span>Gudang 2</span><span>28%</span></div>
+    <div class="stat-line"><span>Gudang 3</span><span>18%</span></div>
+    <div class="stat-line"><span>Gudang 4</span><span>12%</span></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Status Permintaan</h3><p>Kondisi dokumen berjalan</p></div></div>
+    <div class="list">
+      <div class="stat-line"><span>Selesai</span><span class="badge success">50%</span></div>
+      <div class="stat-line"><span>Diproses</span><span class="badge info">25%</span></div>
+      <div class="stat-line"><span>Menunggu</span><span class="badge warning">17%</span></div>
+      <div class="stat-line"><span>Dibatalkan</span><span class="badge danger">8%</span></div>
+    </div>
+  </div>
+</section>
+<section class="card" style="margin-top:18px"><div class="section-head"><div><h3>Permintaan Terbaru</h3><p>Aktivitas terbaru dari modul permintaan dan operasional gudang.</p></div><a class="btn btn-secondary" href="permintaan.html">Lihat semua</a></div>
+<div class="table-wrap"><table><thead><tr><th>No. Permintaan</th><th>Tanggal</th><th>Jenis</th><th>Gudang Asal</th><th>Gudang Tujuan</th><th>Jumlah Item</th><th>Status</th><th>Dibuat Oleh</th></tr></thead>
+<tbody>
+<tr><td>PR-202601-001</td><td>28 Jan 2026</td><td>Permintaan</td><td>Gudang 1</td><td>Gudang 2</td><td>12</td><td><span class="status warning">Menunggu</span></td><td>Andi Pratama</td></tr>
+<tr><td>PR-202601-002</td><td>27 Jan 2026</td><td>Pengeluaran</td><td>Gudang 2</td><td>-</td><td>8</td><td><span class="status info">Diproses</span></td><td>Budi Santoso</td></tr>
+<tr><td>PR-202601-003</td><td>26 Jan 2026</td><td>Permintaan</td><td>Gudang 3</td><td>Gudang 1</td><td>6</td><td><span class="status success">Selesai</span></td><td>Siti Rahma</td></tr>
+<tr><td>PR-202601-004</td><td>25 Jan 2026</td><td>Penerimaan</td><td>-</td><td>Gudang 2</td><td>15</td><td><span class="status primary">Dalam Pengiriman</span></td><td>Dedi Kurniawan</td></tr>
+</tbody></table></div></section>
+
+      <div class="footer-note">Bundle slicing statis untuk implementasi/adopsi layout WMS SJLM &amp; GEKA. File ini dimaksudkan sebagai fondasi UI, bukan aplikasi backend final.</div>
+    </main>
+  </div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

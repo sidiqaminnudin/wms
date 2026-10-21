@@ -1,0 +1,6 @@
+<nav class="tabs" aria-label="<%= locals.label || 'Navigasi bagian' %>">
+  <% (locals.tabs ?? []).forEach(tab => { const selected = tab.active ?? tab.id === locals.active; %>
+    <a href="<%= tab.href || '#' %>" class="<%= selected ? 'active' : '' %>" <% if (selected) { %>aria-current="page"<% } %>><%= tab.label %></a>
+  <% }) %>
+</nav>
+

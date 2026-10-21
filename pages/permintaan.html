@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>permintaan.html</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>WMS<br>SJLM &amp; GEKA</div>
+          <small>Warehouse Management System</small>
+        </div>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Operasional</p>
+        <nav class="nav"><a class="" href="dashboard.html"><span class="dot"></span>Dashboard</a>
+<a class="" href="master-barang.html"><span class="dot"></span>Master Barang</a>
+<a class="active" href="permintaan.html"><span class="dot"></span>Permintaan</a>
+<a class="" href="alokasi-internal.html"><span class="dot"></span>Alokasi Internal</a>
+<a class="" href="pengiriman-penerimaan.html"><span class="dot"></span>Pengiriman & Penerimaan</a>
+<a class="" href="teknisi-stockopname.html"><span class="dot"></span>Teknisi & Stock Opname</a>
+<a class="" href="procurement.html"><span class="dot"></span>Procurement</a>
+<a class="" href="projects.html"><span class="dot"></span>Proyek Instansi</a>
+<a class="" href="reports.html"><span class="dot"></span>Laporan</a>
+<a class="" href="admin-settings.html"><span class="dot"></span>Administrasi</a>
+<a class="" href="references.html"><span class="dot"></span>Referensi Desain</a></nav>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Entitas</p>
+        <div class="company-stack">
+          <div class="company-card"><strong>SJLM</strong><small>Solusi Logistik Masa Depan</small></div>
+          <div class="company-card"><strong>GEKA</strong><small>Bersama Lebih Kuat</small></div>
+        </div>
+      </div>
+      <div class="side-section notice" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff3e8">
+        <strong>Catatan bundle</strong>
+        <div style="margin-top:8px;font-size:13px;line-height:1.55">Harga dibuat opsional. Login hanya memakai username dan password. Warna mengikuti identitas visual GEKA.</div>
+      </div>
+    </aside>
+    
+    <main class="content">
+      
+
+    <div class="topbar">
+      <input class="search" value="Cari nomor permintaan..." aria-label="search" />
+      <div class="top-actions">
+        <span class="badge primary">01 Jan 2026 - 31 Jan 2026</span>
+        <span class="badge success">Semua Gudang</span>
+        <div class="avatar"><div class="circle">AP</div><div><strong>Andi Pratama</strong><div style="font-size:12px;color:var(--muted)">Admin</div></div></div>
+      </div>
+    </div>
+    
+<div class="section-head"><div><h1 style="margin:0">Permintaan Barang &amp; Approval</h1><p>Pengelolaan permintaan barang antar gudang dengan alur approval terstruktur.</p></div><a class="btn btn-primary">Buat Permintaan</a></div>
+<section class="card"><div class="tabs"><a class="active">Semua</a><a>Menunggu</a><a>Diproses</a><a>Disetujui</a><a>Ditolak</a></div>
+<div class="table-wrap"><table><thead><tr><th>No. Permintaan</th><th>Tanggal</th><th>Pemohon</th><th>Gudang Asal</th><th>Gudang Tujuan</th><th>Jumlah Item</th><th>Prioritas</th><th>Status</th></tr></thead><tbody>
+<tr><td>PR-202601-0012</td><td>28 Jan 2026</td><td>Budi Santoso</td><td>Gudang 1</td><td>Gudang 3</td><td>5</td><td><span class="status danger">Tinggi</span></td><td><span class="status warning">Menunggu</span></td></tr>
+<tr><td>PR-202601-0011</td><td>27 Jan 2026</td><td>Siti Rahma</td><td>Gudang 2</td><td>Gudang 4</td><td>3</td><td><span class="status info">Normal</span></td><td><span class="status info">Diproses</span></td></tr>
+<tr><td>PR-202601-0010</td><td>27 Jan 2026</td><td>Andi Pratama</td><td>Gudang 1</td><td>Gudang 4</td><td>8</td><td><span class="status info">Normal</span></td><td><span class="status success">Disetujui</span></td></tr>
+<tr><td>PR-202601-0009</td><td>26 Jan 2026</td><td>Hadi Hartono</td><td>Gudang 3</td><td>Gudang 1</td><td>2</td><td><span class="status danger">Tinggi</span></td><td><span class="status danger">Ditolak</span></td></tr>
+</tbody></table></div></section>
+<section class="grid grid-3" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Buat Permintaan</h3><p>Form slicing untuk pembuatan permintaan barang.</p></div></div>
+    <div class="form-grid">
+      <div class="input-group"><label>Perusahaan</label><select><option>SJLM</option></select></div>
+      <div class="input-group"><label>Tanggal Permintaan</label><input value="28 Jan 2026"></div>
+      <div class="input-group"><label>Gudang Asal</label><select><option>Gudang 1 - Main Warehouse</option></select></div>
+      <div class="input-group"><label>Gudang Tujuan</label><select><option>Gudang 3 - Cabang Cikarang</option></select></div>
+      <div class="input-group"><label>Keperluan</label><select><option>Operasional</option></select></div>
+      <div class="input-group"><label>Prioritas</label><select><option>Normal</option><option>Tinggi</option></select></div>
+    </div>
+    <div class="input-group" style="margin-top:14px"><label>Catatan Permintaan</label><textarea>Permintaan untuk kebutuhan stok operasional area picking.</textarea></div>
+    <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px"><button class="btn btn-secondary">Simpan Draft</button><button class="btn btn-primary">Ajukan Permintaan</button></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Detail Permintaan</h3><p>View detail dokumen permintaan.</p></div><span class="badge warning">Menunggu Approval</span></div>
+    <div class="stat-line"><span>Pemohon</span><strong>Budi Santoso / Staff Gudang</strong></div>
+    <div class="stat-line"><span>Gudang Asal</span><strong>Gudang 1 - Main Warehouse</strong></div>
+    <div class="stat-line"><span>Gudang Tujuan</span><strong>Gudang 3 - Cabang Cikarang</strong></div>
+    <div class="stat-line"><span>Keperluan</span><strong>Operasional</strong></div>
+    <div class="stat-line"><span>Prioritas</span><strong>Tinggi</strong></div>
+    <div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Kode</th><th>Nama Barang</th><th>Jumlah</th><th>Satuan</th><th>Status</th></tr></thead><tbody>
+      <tr><td>BRG-001</td><td>Kardus Box 40x40</td><td>50</td><td>Pcs</td><td><span class="status warning">Menunggu</span></td></tr>
+      <tr><td>BRG-002</td><td>Plastic Wrap</td><td>20</td><td>Roll</td><td><span class="status warning">Menunggu</span></td></tr>
+      <tr><td>BRG-003</td><td>Lakban Coklat</td><td>10</td><td>Roll</td><td><span class="status warning">Menunggu</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Timeline Approval</h3><p>Urutan approval bertingkat.</p></div></div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Permintaan Dibuat</strong><div style="color:var(--muted)">28 Jan 2026 10:22 · oleh Budi Santoso</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Manager Gudang</strong><div style="color:var(--muted)">Menunggu persetujuan</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Head Logistik</strong><div style="color:var(--muted)">Menunggu persetujuan</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Direktur Operasional</strong><div style="color:var(--muted)">Menunggu persetujuan</div></div></div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:16px"><button class="btn btn-secondary" style="color:var(--danger)">Tolak</button><button class="btn btn-secondary">Setujui Sebagian</button><button class="btn btn-primary">Setujui</button></div>
+  </div>
+</section>
+
+      <div class="footer-note">Bundle slicing statis untuk implementasi/adopsi layout WMS SJLM &amp; GEKA. File ini dimaksudkan sebagai fondasi UI, bukan aplikasi backend final.</div>
+    </main>
+  </div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

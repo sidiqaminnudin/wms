@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>alokasi-internal.html</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>WMS<br>SJLM &amp; GEKA</div>
+          <small>Warehouse Management System</small>
+        </div>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Operasional</p>
+        <nav class="nav"><a class="" href="dashboard.html"><span class="dot"></span>Dashboard</a>
+<a class="" href="master-barang.html"><span class="dot"></span>Master Barang</a>
+<a class="" href="permintaan.html"><span class="dot"></span>Permintaan</a>
+<a class="active" href="alokasi-internal.html"><span class="dot"></span>Alokasi Internal</a>
+<a class="" href="pengiriman-penerimaan.html"><span class="dot"></span>Pengiriman & Penerimaan</a>
+<a class="" href="teknisi-stockopname.html"><span class="dot"></span>Teknisi & Stock Opname</a>
+<a class="" href="procurement.html"><span class="dot"></span>Procurement</a>
+<a class="" href="projects.html"><span class="dot"></span>Proyek Instansi</a>
+<a class="" href="reports.html"><span class="dot"></span>Laporan</a>
+<a class="" href="admin-settings.html"><span class="dot"></span>Administrasi</a>
+<a class="" href="references.html"><span class="dot"></span>Referensi Desain</a></nav>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Entitas</p>
+        <div class="company-stack">
+          <div class="company-card"><strong>SJLM</strong><small>Solusi Logistik Masa Depan</small></div>
+          <div class="company-card"><strong>GEKA</strong><small>Bersama Lebih Kuat</small></div>
+        </div>
+      </div>
+      <div class="side-section notice" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff3e8">
+        <strong>Catatan bundle</strong>
+        <div style="margin-top:8px;font-size:13px;line-height:1.55">Harga dibuat opsional. Login hanya memakai username dan password. Warna mengikuti identitas visual GEKA.</div>
+      </div>
+    </aside>
+    
+    <main class="content">
+      
+
+    <div class="topbar">
+      <input class="search" value="Cari nomor alokasi, gudang, atau status..." aria-label="search" />
+      <div class="top-actions">
+        <span class="badge primary">01 Jan 2026 - 31 Jan 2026</span>
+        <span class="badge success">Semua Gudang</span>
+        <div class="avatar"><div class="circle">AP</div><div><strong>Andi Pratama</strong><div style="font-size:12px;color:var(--muted)">Admin</div></div></div>
+      </div>
+    </div>
+    
+<div class="page-title"><h1>Alokasi Internal SJLM ke GEKA</h1><p>Pemindahan stok antar gudang dalam satu grup perusahaan (tanpa jual beli).</p></div>
+<section class="grid grid-4" style="margin-top:18px">
+  <div class="card"><strong>Tanpa Jual Beli</strong><p style="color:var(--muted)">Pemindahan stok internal antar gudang dalam grup.</p></div>
+  <div class="card"><strong>Stok Real-time</strong><p style="color:var(--muted)">Reservasi stok otomatis dari gudang asal.</p></div>
+  <div class="card"><strong>Proses Terstruktur</strong><p style="color:var(--muted)">Request → Approved → Reserved → Sent → Received.</p></div>
+  <div class="card"><strong>Transparan & Audit</strong><p style="color:var(--muted)">Seluruh aktivitas tercatat dengan lengkap.</p></div>
+</section>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Daftar Alokasi Internal</h3><p>Daftar pemindahan stok antar gudang.</p></div><a class="btn btn-primary">Buat Alokasi</a></div>
+    <div class="tabs"><a class="active">Semua 24</a><a>Draft 2</a><a>Menunggu Approval 6</a><a>Disetujui 4</a><a>Dalam Proses 8</a><a>Selesai 4</a></div>
+    <div class="table-wrap"><table><thead><tr><th>No. Alokasi</th><th>Tanggal</th><th>Gudang Asal</th><th>Gudang Tujuan</th><th>Jumlah Item</th><th>Total Qty</th><th>Status</th></tr></thead><tbody>
+    <tr><td>ISA-202601-0008</td><td>29 Jan 2026</td><td>SJLM - Gudang 1</td><td>GEKA - Gudang 2</td><td>12</td><td>245</td><td><span class="status info">Dalam Proses</span></td></tr>
+    <tr><td>ISA-202601-0007</td><td>28 Jan 2026</td><td>SJLM - Gudang 2</td><td>GEKA - Gudang 3</td><td>8</td><td>120</td><td><span class="status success">Disetujui</span></td></tr>
+    <tr><td>ISA-202601-0006</td><td>27 Jan 2026</td><td>SJLM - Gudang 1</td><td>GEKA - Gudang 1</td><td>5</td><td>60</td><td><span class="status primary">In Transit</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Detail Alokasi</h3><p>Contoh satu dokumen alokasi internal.</p></div><span class="badge info">Dalam Proses</span></div>
+    <h3 style="margin-top:0">ISA-202601-0008</h3>
+    <div class="timeline">
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Request</strong><div style="color:var(--muted)">28 Jan 2026 09:15 · Oleh Budi Santoso</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Approved</strong><div style="color:var(--muted)">28 Jan 2026 11:30 · Oleh Andi Pratama</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Reserved</strong><div style="color:var(--muted)">Stok berhasil direservasi</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Sent</strong><div style="color:var(--muted)">Menunggu pengiriman</div></div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>Kode Item</th><th>Nama Item</th><th>Qty Request</th><th>Qty Reservasi</th><th>Status</th></tr></thead><tbody>
+      <tr><td>ITM-00123</td><td>Kabel LAN Cat6</td><td>50</td><td>50</td><td><span class="status success">Terservasi</span></td></tr>
+      <tr><td>ITM-00456</td><td>Switch 24 Port</td><td>10</td><td>10</td><td><span class="status success">Terservasi</span></td></tr>
+      <tr><td>ITM-00789</td><td>Access Point AC</td><td>20</td><td>20</td><td><span class="status success">Terservasi</span></td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+      <div class="footer-note">Bundle slicing statis untuk implementasi/adopsi layout WMS SJLM &amp; GEKA. File ini dimaksudkan sebagai fondasi UI, bukan aplikasi backend final.</div>
+    </main>
+  </div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>procurement.html</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>WMS<br>SJLM &amp; GEKA</div>
+          <small>Warehouse Management System</small>
+        </div>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Operasional</p>
+        <nav class="nav"><a class="" href="dashboard.html"><span class="dot"></span>Dashboard</a>
+<a class="" href="master-barang.html"><span class="dot"></span>Master Barang</a>
+<a class="" href="permintaan.html"><span class="dot"></span>Permintaan</a>
+<a class="" href="alokasi-internal.html"><span class="dot"></span>Alokasi Internal</a>
+<a class="" href="pengiriman-penerimaan.html"><span class="dot"></span>Pengiriman & Penerimaan</a>
+<a class="" href="teknisi-stockopname.html"><span class="dot"></span>Teknisi & Stock Opname</a>
+<a class="active" href="procurement.html"><span class="dot"></span>Procurement</a>
+<a class="" href="projects.html"><span class="dot"></span>Proyek Instansi</a>
+<a class="" href="reports.html"><span class="dot"></span>Laporan</a>
+<a class="" href="admin-settings.html"><span class="dot"></span>Administrasi</a>
+<a class="" href="references.html"><span class="dot"></span>Referensi Desain</a></nav>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Entitas</p>
+        <div class="company-stack">
+          <div class="company-card"><strong>SJLM</strong><small>Solusi Logistik Masa Depan</small></div>
+          <div class="company-card"><strong>GEKA</strong><small>Bersama Lebih Kuat</small></div>
+        </div>
+      </div>
+      <div class="side-section notice" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff3e8">
+        <strong>Catatan bundle</strong>
+        <div style="margin-top:8px;font-size:13px;line-height:1.55">Harga dibuat opsional. Login hanya memakai username dan password. Warna mengikuti identitas visual GEKA.</div>
+      </div>
+    </aside>
+    
+    <main class="content">
+      
+
+    <div class="topbar">
+      <input class="search" value="Cari nomor PO, supplier, atau nama barang..." aria-label="search" />
+      <div class="top-actions">
+        <span class="badge primary">01 Jan 2026 - 31 Jan 2026</span>
+        <span class="badge success">Semua Gudang</span>
+        <div class="avatar"><div class="circle">AP</div><div><strong>Andi Pratama</strong><div style="font-size:12px;color:var(--muted)">Admin</div></div></div>
+      </div>
+    </div>
+    
+<div class="page-title"><h1>Pengadaan (Purchase Order)</h1><p>Kelola proses pengadaan barang dan jasa dari permintaan hingga penerimaan.</p></div>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Daftar Purchase Order</h3><p>Contoh tabel utama modul pengadaan.</p></div><a class="btn btn-primary">Buat PO</a></div>
+    <div class="table-wrap"><table><thead><tr><th>No. PO</th><th>Tanggal</th><th>Supplier</th><th>Jumlah Item</th><th>Jumlah Unit</th><th>Status</th><th>Progress</th></tr></thead><tbody>
+      <tr><td>PO-2026-001</td><td>06 Jan 2026</td><td>PT Maju Sejahtera</td><td>12</td><td>250</td><td><span class="status success">Selesai</span></td><td>100%</td></tr>
+      <tr><td>PO-2026-002</td><td>08 Jan 2026</td><td>PT Surya Teknik</td><td>8</td><td>120</td><td><span class="status warning">Dalam Proses</span></td><td>60%</td></tr>
+      <tr><td>PO-2026-003</td><td>12 Jan 2026</td><td>CV Sinar Abadi</td><td>15</td><td>300</td><td><span class="status primary">Menunggu</span></td><td>0%</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Detail Purchase Order</h3><p>Step operasional dan daftar barang.</p></div><span class="badge warning">Dalam Proses</span></div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Permintaan</strong><div style="color:var(--muted)">06 Jan 2026</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>PO Dibuat</strong><div style="color:var(--muted)">08 Jan 2026</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Persetujuan</strong><div style="color:var(--muted)">09 Jan 2026</div></div></div>
+      <div class="timeline-item"><div class="bullet"></div><div><strong>Pengiriman</strong><div style="color:var(--muted)">Dalam Proses</div></div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>Kode</th><th>Nama Barang</th><th>Spesifikasi</th><th>Satuan</th><th>Jumlah Unit</th><th>Status</th></tr></thead><tbody>
+      <tr><td>BRG-001</td><td>Pipa PVC 2 inch</td><td>SNI 10m/pcs</td><td>pcs</td><td>50</td><td><span class="status success">Diterima Sebagian</span></td></tr>
+      <tr><td>BRG-002</td><td>Valve 1/2 inch</td><td>Kuningan</td><td>pcs</td><td>20</td><td><span class="status info">Dalam Pengiriman</span></td></tr>
+      <tr><td>BRG-003</td><td>Lem PVC</td><td>400 gr</td><td>pcs</td><td>30</td><td><span class="status warning">Menunggu</span></td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+      <div class="footer-note">Bundle slicing statis untuk implementasi/adopsi layout WMS SJLM &amp; GEKA. File ini dimaksudkan sebagai fondasi UI, bukan aplikasi backend final.</div>
+    </main>
+  </div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

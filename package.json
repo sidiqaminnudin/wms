@@ -1,0 +1,21 @@
+{
+  "name": "wms-sjlm-geka",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "dev": "node --watch --env-file-if-exists=.env src/server.js",
+    "test": "node --test tests/*.test.js",
+    "test:ui": "playwright test"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "ejs": "^3.1.10",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "@fontsource/inter": "^5.2.8"
+  },
+  "devDependencies": { "@playwright/test": "^1.56.0" }
+}

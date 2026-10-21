@@ -1,0 +1,39 @@
+{
+  "bundle_name": "WMS SJLM & GEKA UI Slicing Bundle",
+  "theme": {
+    "primary": "#f97316",
+    "primary_dark": "#b45309",
+    "brown": "#92400e",
+    "cream": "#fde7d3"
+  },
+  "login_mode": "username_password_only",
+  "price_policy": "optional_only",
+  "reference_images": [
+    "geka_warehouse_approval_dashboard_mockup.png",
+    "orange_warehouse_management_dashboard.png",
+    "orange_warehouse_management_dashboard_board.png",
+    "terracotta_warehouse_management_showcase.png",
+    "warehouse_management_dashboard_showcase.png",
+    "warehouse_management_ui_dashboard_board.png",
+    "warehouse_shipping_receiving_ui_showcase.png",
+    "wms_dashboard_ui_showcase_poster.png",
+    "wms_internal_allocation_ui_ux_board.png",
+    "wms_permintaan_barang_approval_showcase.png",
+    "wms_sjlm_geka_ui_showcase_board.png",
+    "wms_teknisi_dan_stock_opname_board.png",
+    "wms_warehouse_management_ui_showcase.png"
+  ],
+  "pages": [
+    "dashboard.html",
+    "master-barang.html",
+    "permintaan.html",
+    "alokasi-internal.html",
+    "pengiriman-penerimaan.html",
+    "teknisi-stockopname.html",
+    "procurement.html",
+    "projects.html",
+    "reports.html",
+    "admin-settings.html",
+    "references.html"
+  ]
+}

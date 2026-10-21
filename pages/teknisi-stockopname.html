@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>teknisi-stockopname.html</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>WMS<br>SJLM &amp; GEKA</div>
+          <small>Warehouse Management System</small>
+        </div>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Operasional</p>
+        <nav class="nav"><a class="" href="dashboard.html"><span class="dot"></span>Dashboard</a>
+<a class="" href="master-barang.html"><span class="dot"></span>Master Barang</a>
+<a class="" href="permintaan.html"><span class="dot"></span>Permintaan</a>
+<a class="" href="alokasi-internal.html"><span class="dot"></span>Alokasi Internal</a>
+<a class="" href="pengiriman-penerimaan.html"><span class="dot"></span>Pengiriman & Penerimaan</a>
+<a class="active" href="teknisi-stockopname.html"><span class="dot"></span>Teknisi & Stock Opname</a>
+<a class="" href="procurement.html"><span class="dot"></span>Procurement</a>
+<a class="" href="projects.html"><span class="dot"></span>Proyek Instansi</a>
+<a class="" href="reports.html"><span class="dot"></span>Laporan</a>
+<a class="" href="admin-settings.html"><span class="dot"></span>Administrasi</a>
+<a class="" href="references.html"><span class="dot"></span>Referensi Desain</a></nav>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Entitas</p>
+        <div class="company-stack">
+          <div class="company-card"><strong>SJLM</strong><small>Solusi Logistik Masa Depan</small></div>
+          <div class="company-card"><strong>GEKA</strong><small>Bersama Lebih Kuat</small></div>
+        </div>
+      </div>
+      <div class="side-section notice" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff3e8">
+        <strong>Catatan bundle</strong>
+        <div style="margin-top:8px;font-size:13px;line-height:1.55">Harga dibuat opsional. Login hanya memakai username dan password. Warna mengikuti identitas visual GEKA.</div>
+      </div>
+    </aside>
+    
+    <main class="content">
+      
+
+    <div class="topbar">
+      <input class="search" value="Cari menu, nomor WO, atau barang..." aria-label="search" />
+      <div class="top-actions">
+        <span class="badge primary">01 Jan 2026 - 31 Jan 2026</span>
+        <span class="badge success">Semua Gudang</span>
+        <div class="avatar"><div class="circle">AP</div><div><strong>Andi Pratama</strong><div style="font-size:12px;color:var(--muted)">Admin</div></div></div>
+      </div>
+    </div>
+    
+<div class="page-title"><h1>Teknisi &amp; Stock Opname</h1><p>Pengelolaan distribusi material ke teknisi dan proses stock opname yang akurat.</p></div>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Dashboard Teknisi</h3><p>Distribusi status barang per teknisi.</p></div></div>
+    <div class="grid grid-4">
+      <div class="kpi"><div><div style="color:var(--muted)">Total Barang Dibawa</div><h3>1.245</h3><p>+12% dari bulan lalu</p></div><div class="icon green">↑</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Terpasang</div><h3>420</h3><p>8% dari total</p></div><div class="icon blue">◎</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Dikembalikan</div><h3>132</h3><p>6% dari total</p></div><div class="icon orange">↩</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Rusak</div><h3>51</h3><p>4% dari total</p></div><div class="icon red">✕</div></div>
+    </div>
+    <div class="bars" style="margin-top:16px">
+      <div class="bar"><span>Budi Santoso</span><div class="progress" data-progress="78"><span></span></div><strong>193</strong></div>
+      <div class="bar"><span>Ahmad Fauzi</span><div class="progress" data-progress="65"><span></span></div><strong>161</strong></div>
+      <div class="bar"><span>Rizky Hadi</span><div class="progress" data-progress="58"><span></span></div><strong>133</strong></div>
+      <div class="bar"><span>Dewi Lestari</span><div class="progress" data-progress="42"><span></span></div><strong>94</strong></div>
+    </div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Issue Barang ke Teknisi</h3><p>Pilih work order dan barang yang akan diserahkan.</p></div></div>
+    <div class="form-grid">
+      <div class="input-group"><label>Work Order</label><select><option>WO-2025-0012</option></select></div>
+      <div class="input-group"><label>Pilih Teknisi</label><select><option>Budi Santoso (TKN-001)</option></select></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>Kode Barang</th><th>Nama Barang</th><th>Qty Diminta</th><th>Qty Issue</th><th>Satuan</th></tr></thead><tbody>
+      <tr><td>ITM-AC-001</td><td>Access Point Ubiquiti</td><td>10</td><td>10</td><td>Pcs</td></tr>
+      <tr><td>ITM-CB-004</td><td>Kabel UTP Cat6</td><td>100</td><td>100</td><td>Mtr</td></tr>
+      <tr><td>ITM-CN-002</td><td>Connector RJ45</td><td>20</td><td>20</td><td>Pcs</td></tr>
+    </tbody></table></div>
+    <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px"><button class="btn btn-secondary">Batal</button><button class="btn btn-primary">Lanjut ke Konfirmasi</button></div>
+  </div>
+</section>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Dashboard Stock Opname</h3><p>Pantau progres dan hasil stock opname per gudang.</p></div></div>
+    <div class="grid grid-4">
+      <div class="kpi"><div><div style="color:var(--muted)">Total Jadwal</div><h3>12</h3></div><div class="icon orange">📅</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Sedang Berjalan</div><h3>3</h3></div><div class="icon info">▶</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Selesai</div><h3>8</h3></div><div class="icon green">✔</div></div>
+      <div class="kpi"><div><div style="color:var(--muted)">Tertunda</div><h3>1</h3></div><div class="icon red">⏰</div></div>
+    </div>
+    <div class="bars" style="margin-top:16px">
+      <div class="bar"><span>Gudang 1 - Jakarta</span><div class="progress" data-progress="80"><span></span></div><strong>80%</strong></div>
+      <div class="bar"><span>Gudang 2 - Surabaya</span><div class="progress" data-progress="60"><span></span></div><strong>60%</strong></div>
+      <div class="bar"><span>Gudang 3 - Bandung</span><div class="progress" data-progress="100"><span></span></div><strong>100%</strong></div>
+    </div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Input Perhitungan Opname</h3><p>Masukkan jumlah aktual dan lihat selisih real-time.</p></div><span class="badge success">Sedang Berjalan</span></div>
+    <div class="table-wrap"><table><thead><tr><th>Kode Barang</th><th>Nama Barang</th><th>Qty Sistem</th><th>Qty Aktual</th><th>Selisih</th><th>Status</th></tr></thead><tbody>
+      <tr><td>ITM-AC-001</td><td>Access Point Ubiquiti</td><td>50</td><td>48</td><td>-2</td><td><span class="status danger">Kurang</span></td></tr>
+      <tr><td>ITM-CB-004</td><td>Kabel UTP Cat6</td><td>100</td><td>100</td><td>0</td><td><span class="status success">Sesuai</span></td></tr>
+      <tr><td>ITM-CN-002</td><td>Connector RJ45</td><td>300</td><td>320</td><td>+20</td><td><span class="status info">Lebih</span></td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+      <div class="footer-note">Bundle slicing statis untuk implementasi/adopsi layout WMS SJLM &amp; GEKA. File ini dimaksudkan sebagai fondasi UI, bukan aplikasi backend final.</div>
+    </main>
+  </div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

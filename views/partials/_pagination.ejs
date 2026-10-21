@@ -1,0 +1,13 @@
+<nav aria-label="Navigasi halaman">
+  <ul class="pagination flex-wrap mb-0">
+    <li class="page-item<%= locals.previous ? '' : ' disabled' %>">
+      <% if (locals.previous) { %><a class="page-link" href="<%= locals.previous %>">Sebelumnya</a><% } else { %><span class="page-link" aria-disabled="true">Sebelumnya</span><% } %>
+    </li>
+    <% (locals.pages ?? []).forEach(page => { const selected = page.current ?? page.number === locals.current; %>
+      <li class="page-item<%= selected ? ' active' : '' %>"><a class="page-link" href="<%= page.href || '#' %>" <% if (selected) { %>aria-current="page"<% } %>><%= page.number %></a></li>
+    <% }) %>
+    <li class="page-item<%= locals.next ? '' : ' disabled' %>">
+      <% if (locals.next) { %><a class="page-link" href="<%= locals.next %>">Berikutnya</a><% } else { %><span class="page-link" aria-disabled="true">Berikutnya</span><% } %>
+    </li>
+  </ul>
+</nav>

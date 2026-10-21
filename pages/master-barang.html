@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>master-barang.html</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark"></div>
+        <div>
+          <div>WMS<br>SJLM &amp; GEKA</div>
+          <small>Warehouse Management System</small>
+        </div>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Operasional</p>
+        <nav class="nav"><a class="" href="dashboard.html"><span class="dot"></span>Dashboard</a>
+<a class="active" href="master-barang.html"><span class="dot"></span>Master Barang</a>
+<a class="" href="permintaan.html"><span class="dot"></span>Permintaan</a>
+<a class="" href="alokasi-internal.html"><span class="dot"></span>Alokasi Internal</a>
+<a class="" href="pengiriman-penerimaan.html"><span class="dot"></span>Pengiriman & Penerimaan</a>
+<a class="" href="teknisi-stockopname.html"><span class="dot"></span>Teknisi & Stock Opname</a>
+<a class="" href="procurement.html"><span class="dot"></span>Procurement</a>
+<a class="" href="projects.html"><span class="dot"></span>Proyek Instansi</a>
+<a class="" href="reports.html"><span class="dot"></span>Laporan</a>
+<a class="" href="admin-settings.html"><span class="dot"></span>Administrasi</a>
+<a class="" href="references.html"><span class="dot"></span>Referensi Desain</a></nav>
+      </div>
+      <div class="side-section">
+        <p class="side-title">Entitas</p>
+        <div class="company-stack">
+          <div class="company-card"><strong>SJLM</strong><small>Solusi Logistik Masa Depan</small></div>
+          <div class="company-card"><strong>GEKA</strong><small>Bersama Lebih Kuat</small></div>
+        </div>
+      </div>
+      <div class="side-section notice" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:#fff3e8">
+        <strong>Catatan bundle</strong>
+        <div style="margin-top:8px;font-size:13px;line-height:1.55">Harga dibuat opsional. Login hanya memakai username dan password. Warna mengikuti identitas visual GEKA.</div>
+      </div>
+    </aside>
+    
+    <main class="content">
+      
+
+    <div class="topbar">
+      <input class="search" value="Cari barang, SKU, atau kategori..." aria-label="search" />
+      <div class="top-actions">
+        <span class="badge primary">01 Jan 2026 - 31 Jan 2026</span>
+        <span class="badge success">Semua Gudang</span>
+        <div class="avatar"><div class="circle">AP</div><div><strong>Andi Pratama</strong><div style="font-size:12px;color:var(--muted)">Admin</div></div></div>
+      </div>
+    </div>
+    
+<div class="section-head"><div><h1 style="margin:0">Master Barang</h1><p>Kelola data barang, kategori, spesifikasi, dan inventaris perusahaan.</p></div><a class="btn btn-primary">Tambah Barang</a></div>
+<section class="card"><div class="grid grid-4">
+  <div class="input-group"><label>Perusahaan</label><select><option>SJLM</option><option>GEKA</option></select></div>
+  <div class="input-group"><label>Gudang</label><select><option>Semua Gudang</option></select></div>
+  <div class="input-group"><label>Kategori</label><select><option>Semua Kategori</option></select></div>
+  <div class="input-group"><label>Pencarian</label><input placeholder="Cari nama barang, SKU, atau kode..."></div>
+</div>
+<div class="tabs" style="margin-top:16px"><a class="active">Semua 1.248</a><a>Aktif 1.132</a><a>Stok Rendah 64</a><a>Tidak Aktif 52</a></div>
+<div class="table-wrap"><table><thead><tr><th>Foto</th><th>Nama Barang</th><th>SKU/Kode</th><th>Kategori</th><th>Satuan</th><th>Stok Total</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>📦</td><td><strong>Pallet Plastik 1100x1100</strong><div style="color:var(--muted)">BRG-001</div></td><td>PLT-1100-BL</td><td>Pallet</td><td>Pcs</td><td>1.240</td><td><span class="status success">Tersedia</span></td></tr>
+<tr><td>🔋</td><td><strong>Forklift Battery 2.5T</strong><div style="color:var(--muted)">BRG-002</div></td><td>FLK-25T-BT</td><td>Alat Berat</td><td>Unit</td><td>3</td><td><span class="status warning">Stok Rendah</span></td></tr>
+<tr><td>⛑️</td><td><strong>Safety Helmet</strong><div style="color:var(--muted)">BRG-003</div></td><td>HLM-SFT-YL</td><td>APD</td><td>Pcs</td><td>526</td><td><span class="status success">Tersedia</span></td></tr>
+<tr><td>📟</td><td><strong>Barcode Scanner</strong><div style="color:var(--muted)">BRG-004</div></td><td>BCR-DS930</td><td>Elektronik</td><td>Unit</td><td>28</td><td><span class="status success">Tersedia</span></td></tr>
+<tr><td>🛒</td><td><strong>Hand Pallet 3 Ton</strong><div style="color:var(--muted)">BRG-006</div></td><td>HPT-3T</td><td>Material Handling</td><td>Unit</td><td>12</td><td><span class="status warning">Stok Rendah</span></td></tr>
+</tbody></table></div>
+</section>
+<section class="grid grid-2" style="margin-top:18px">
+  <div class="card"><div class="section-head"><div><h3>Detail Barang</h3><p>Contoh tampilan detail dan stok per lokasi gudang.</p></div><span class="badge success">Aktif</span></div>
+    <div class="grid grid-2">
+      <div><div style="background:#e9f2ff;border-radius:18px;height:220px;display:grid;place-items:center;font-size:74px">🟦</div></div>
+      <div>
+        <h3 style="margin-top:0">Pallet Plastik 1100x1100</h3>
+        <div class="stat-line"><span>SKU / Kode</span><strong>PLT-1100-BL</strong></div>
+        <div class="stat-line"><span>Kategori</span><strong>Pallet</strong></div>
+        <div class="stat-line"><span>Satuan</span><strong>Pcs</strong></div>
+        <div class="stat-line"><span>Berat</span><strong>12.5 kg</strong></div>
+        <div class="stat-line"><span>Dimensi</span><strong>110 x 110 x 15 cm</strong></div>
+      </div>
+    </div>
+    <div class="table-wrap" style="margin-top:18px"><table><thead><tr><th>Lokasi / Gudang</th><th>Stok</th><th>Status</th></tr></thead><tbody>
+      <tr><td>Gudang 1 - SJLM</td><td>850 Pcs</td><td><span class="status success">Tersedia</span></td></tr>
+      <tr><td>Gudang 2 - SJLM</td><td>240 Pcs</td><td><span class="status success">Tersedia</span></td></tr>
+      <tr><td>Gudang 3 - GEKA</td><td>100 Pcs</td><td><span class="status success">Tersedia</span></td></tr>
+      <tr><td>Gudang 4 - GEKA</td><td>50 Pcs</td><td><span class="status success">Tersedia</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h3>Form Tambah Barang</h3><p>Slicing modal/form untuk create item baru.</p></div></div>
+    <div class="form-grid">
+      <div class="input-group"><label>Nama Barang</label><input placeholder="Masukkan nama barang"></div>
+      <div class="input-group"><label>SKU / Kode Barang</label><input placeholder="Contoh: BRG-001"></div>
+      <div class="input-group"><label>Kategori</label><select><option>Pilih kategori</option></select></div>
+      <div class="input-group"><label>Satuan</label><select><option>Pilih satuan</option></select></div>
+      <div class="input-group"><label>Merek</label><input placeholder="Contoh: Toyota"></div>
+      <div class="input-group"><label>Berat (kg)</label><input value="0.0"></div>
+    </div>
+    <div class="input-group" style="margin-top:14px"><label>Deskripsi Barang</label><textarea placeholder="Masukkan deskripsi barang..."></textarea></div>
+    <div class="notice" style="margin-top:14px">Informasi harga disembunyikan secara default dan hanya opsional untuk modul tertentu.</div>
+    <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:16px"><button class="btn btn-secondary">Batal</button><button class="btn btn-primary">Simpan Barang</button></div>
+  </div>
+</section>
+
+      <div class="footer-note">Bundle slicing statis untuk implementasi/adopsi layout WMS SJLM &amp; GEKA. File ini dimaksudkan sebagai fondasi UI, bukan aplikasi backend final.</div>
+    </main>
+  </div>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
